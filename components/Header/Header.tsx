@@ -24,7 +24,9 @@ export const Header: React.FC = () => {
       <header className='header'>
         <div className='header__logo'>
           <Link href='/'>
-            <Image src={logo} alt='1001 Nacht logo' layout='fill' />
+            <a>
+              <Image src={logo} alt='1001 Nacht logo' layout='fill' priority />
+            </a>
           </Link>
         </div>
         <button type='button' className='header__menu-button' onClick={openMenu}></button>
