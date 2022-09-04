@@ -2,9 +2,14 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Inter, Helvetica Neue, sans-serif;
-  background: #000 url(../public/images/background.jpg) top center fixed
-    no-repeat;
+  font-family: 'Inter', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  background: #000 url(../public/images/background.jpg) top center fixed no-repeat;
   background-size: cover;
 }
 
