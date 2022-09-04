@@ -1,0 +1,39 @@
+.header {
+  width: 100%;
+  padding: 12px 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  position: relative;
+  width: 157px;
+  height: 61px;
+  cursor: pointer;
+}
+
+.header__menu-button {
+  display: block;
+  background: url(../public/images/icon-burger.svg) center no-repeat;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    display: block;
+    padding: 30px 30px 20px;
+  }
+
+  .header__logo {
+    width: 275px;
+    height: 107px;
+    margin: 0 auto;
+  }
+
+  .header__menu-button {
+    display: none;
+  }
+}
