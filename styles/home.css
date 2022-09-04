@@ -115,4 +115,10 @@
   line-height: 18px;
   color: #ffffff;
   margin: 0;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.info__link:hover {
+  opacity: 0.7;
 }
