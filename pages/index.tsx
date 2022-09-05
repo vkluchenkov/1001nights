@@ -44,7 +44,9 @@ const Home: NextPage = () => {
         />
       </div>
       <section className='stars'>
-        <h3 className='main__subheader'>Unsere&nbsp;Dozenten in&nbsp;diesem&nbsp;Jahr:</h3>
+        <h3 className='main__subheader stars__subheader'>
+          Unsere&nbsp;Dozenten in&nbsp;diesem&nbsp;Jahr:
+        </h3>
         <ul className='stars__bullets'>
           <li className='stars__bullet'>Shalymar</li>
           <li className='stars__bullet'>Ofra Moustakis</li>

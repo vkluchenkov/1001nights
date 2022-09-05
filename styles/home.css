@@ -7,6 +7,8 @@
 
 .home__container {
   width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 .main__header {
@@ -139,6 +141,7 @@
   }
 
   .home__container {
+    max-width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 20px;
@@ -231,13 +234,21 @@
     padding: 0 0 0 18px;
   }
 
+  .stars {
+    padding: 34px 0 0;
+  }
+
+  .stars__subheader {
+    text-align: left;
+  }
+
   .stars__bullet {
     padding-bottom: 0;
   }
 
   .info {
     grid-column: 2 / -1;
-    padding: 5px;
+    padding: 0;
   }
 
   .info__header {
@@ -251,6 +262,7 @@
 
   .info__text {
     text-align: left;
+    margin-top: 3px;
   }
 
   .main__poster-container {
