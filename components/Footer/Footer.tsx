@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
       </div>
       <div className='footer__copyright'>
         <p className='footer__text'>
-          Copyright ©{year} 1001NachtBellydanceFestival. Alle Reche vorbehalten.
+          Copyright ©{year} 1001NachtBellydanceFestival. Alle&nbsp;Reche&nbsp;vorbehalten.
         </p>
         <p className='footer__text'>
           <a className='footer__link' href='mailto:nafisa@mac.com'>
