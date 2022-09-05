@@ -64,7 +64,7 @@ const Home: NextPage = () => {
           <p className='main__text price__text price__text_padded'>
             Für Freitag und Samstag zusammen: <span className='main__text_strong'>30€</span>
           </p>
-          <p className='main__text price__text price__text_padded'>
+          <p className='main__text price__text price__text_padded price__large-footnote'>
             Bitte Musik an nafisa@mac.com senden. Mit Name, Musiktitel, Musiklänge, für welche
             Show/Wettbewerb
           </p>
