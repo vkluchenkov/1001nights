@@ -1,0 +1,122 @@
+.workshops__section::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 86px;
+  margin: 25px auto;
+  background-color: white;
+}
+
+.workshops__section:last-of-type::after {
+  margin: 25px auto 0;
+}
+
+.workshops__items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: white;
+  text-align: center;
+}
+
+.workshops__item {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  gap: 5px;
+}
+
+.workshops__item:first-of-type {
+  padding: 10px 0 0;
+}
+
+.workshops__item-time {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  margin: 0;
+}
+
+.workshops__item-name {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.workshops__item-topic {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  margin: 0;
+}
+
+.workshops__section_footnotes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.workshops__footnote {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .workshops__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 25px;
+  }
+
+  .workshops__section::after {
+    display: none;
+  }
+
+  .workshops__section_footnotes {
+    grid-column: span 3;
+  }
+
+  .workshops__items {
+    gap: 30px;
+  }
+
+  .workshops__item {
+    gap: 2px;
+  }
+  .workshops__item-time {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+  }
+
+  .workshops__item-name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .workshops__item-topic {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+  }
+}

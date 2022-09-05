@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Button } from '../../components/Button/Button';
 
-const Home: NextPage = () => {
+const Price: NextPage = () => {
   return (
     <>
       <Head>
@@ -11,7 +11,7 @@ const Home: NextPage = () => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='description' content='1001 Nacht festival' />
       </Head>
-      <div className='price__container'>
+      <div className='content__container price__container'>
         <h1 className='main__header'>Preise</h1>
         <section className='price__section price__section_worksops'>
           <h2 className='main__subheader'>1. Workshops</h2>
@@ -78,4 +78,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Price;

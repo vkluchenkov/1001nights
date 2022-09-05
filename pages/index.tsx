@@ -5,7 +5,7 @@ import poster from '../public/images/poster.jpg';
 
 const Home: NextPage = () => {
   return (
-    <div className='home__container'>
+    <div className='content__container home__container'>
       <Head>
         <title>1001 Nacht festival</title>
         <meta charSet='utf-8' />

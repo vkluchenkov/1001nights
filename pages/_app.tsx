@@ -8,6 +8,7 @@ import '../styles/footer.css';
 import '../styles/menu.css';
 import '../styles/button.css';
 import '../styles/price.css';
+import '../styles/workshops.css';
 import type { AppProps } from 'next/app';
 import { Layout } from '../components/Layout/Layout';
 
