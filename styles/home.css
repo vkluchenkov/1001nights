@@ -1,6 +1,12 @@
 .main {
   width: 100%;
+  max-width: 924px;
+  align-self: center;
   padding: 0 20px 40px;
+}
+
+.home__container {
+  width: 100%;
 }
 
 .main__header {
@@ -22,7 +28,7 @@
   color: #b3833b;
   text-align: center;
   margin: 0;
-  padding: 25px 0 15px;
+  padding: 0 0 15px;
 }
 
 .main__text {
@@ -67,6 +73,10 @@
 
 .main__poster {
   border-radius: 5px;
+}
+
+.stars {
+  padding: 25px 0 0;
 }
 
 .stars__bullets {
@@ -126,6 +136,9 @@
 @media screen and (min-width: 768px) {
   .main {
     padding: 0 30px 40px;
+  }
+
+  .home__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 20px;
@@ -177,7 +190,11 @@
   .main__subheader {
     font-size: 24px;
     line-height: 29px;
-    padding: 34px 0 25px;
+    padding: 0 0 25px;
+  }
+
+  .stars {
+    padding: 34px;
   }
 
   .stars__bullets {
@@ -199,9 +216,11 @@
 @media screen and (min-width: 1024px) {
   .main {
     padding: 0 80px 40px;
-    grid-column-gap: 35px;
     max-width: 1024px;
-    margin: 0 auto;
+  }
+
+  .home__container {
+    grid-column-gap: 35px;
   }
 
   .main__subheader {

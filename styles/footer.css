@@ -1,8 +1,9 @@
 .footer {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  margin: 0 0 -16px;
+  margin: auto 0 0;
   padding: 15px 20px;
+  justify-self: flex-end;
 }
 
 .footer__content {

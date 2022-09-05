@@ -16,6 +16,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   ? 'mobile-menu__item mobile-menu__item_active'
                   : 'mobile-menu__item'
               }
+              onClick={onClose}
             >
               Start
             </a>
@@ -29,6 +30,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   ? 'mobile-menu__item mobile-menu__item_active'
                   : 'mobile-menu__item'
               }
+              onClick={onClose}
             >
               Workshops
             </a>
@@ -42,6 +44,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   ? 'mobile-menu__item mobile-menu__item_active'
                   : 'mobile-menu__item'
               }
+              onClick={onClose}
             >
               Wettbewerbe
             </a>
@@ -55,6 +58,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   ? 'mobile-menu__item mobile-menu__item_active'
                   : 'mobile-menu__item'
               }
+              onClick={onClose}
             >
               Registrierung / Preise
             </a>
@@ -68,6 +72,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   ? 'mobile-menu__item mobile-menu__item_active'
                   : 'mobile-menu__item'
               }
+              onClick={onClose}
             >
               Fotogalerie
             </a>
