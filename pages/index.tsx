@@ -54,10 +54,10 @@ const Home: NextPage = () => {
           </ul>
         </section>
         <section className='info'>
-          <p className='main__text main__text_centered'>
+          <p className='main__text info__text'>
             <span className='main__text_strong'>Organisator:</span> Nafisa
           </p>
-          <p className='main__text main__text_centered'>
+          <p className='main__text info__text'>
             Ich freue mich von ganzem Herzen dieses außergewöhnliche Tanzwochenende wieder
             präsentieren zu dürfen und Euch wiederzusehen!
           </p>
