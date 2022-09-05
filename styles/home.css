@@ -122,3 +122,77 @@
 .info__link:hover {
   opacity: 0.7;
 }
+
+@media screen and (min-width: 768px) {
+  .main {
+    width: 100%;
+    padding: 0 30px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+  }
+
+  .main__header {
+    font-size: 36px;
+    line-height: 44px;
+    padding: 0 0 15px;
+    grid-column: 1 / -1;
+  }
+
+  .intro {
+    grid-column: 1 / -1;
+  }
+
+  .info {
+    grid-column: 1 / -1;
+    padding-top: 20px;
+  }
+
+  .info__header {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .info__links {
+    gap: 7px;
+  }
+
+  .info__link {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .main__text {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 10px 0 0;
+  }
+
+  .main__bullet {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    padding-bottom: 12px;
+  }
+
+  .main__subheader {
+    font-size: 24px;
+    line-height: 29px;
+    padding: 34px 0 25px;
+  }
+
+  .stars__bullets {
+    padding: 0 0 0 40px;
+  }
+
+  .stars__bullet {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    padding-bottom: 5px;
+  }
+
+  .main__poster-container {
+    padding: 34px 0 0;
+  }
+}

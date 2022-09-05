@@ -1,0 +1,38 @@
+.menu {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .menu {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .menu__items {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    list-style: none;
+    padding: 7px 0;
+    margin: 0 0 17px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+  }
+
+  .menu__item {
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+
+  .menu__item:hover {
+    opacity: 0.7;
+  }
+
+  .menu__item_active {
+    font-weight: 700;
+    color: #b3833b;
+  }
+}

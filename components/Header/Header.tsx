@@ -3,6 +3,7 @@ import Link from 'next/link';
 import logo from '../../public/images/logo.png';
 import { useEffect, useState } from 'react';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
+import { Menu } from '../Menu/Menu';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,6 +32,7 @@ export const Header: React.FC = () => {
         </div>
         <button type='button' className='header__menu-button' onClick={openMenu}></button>
       </header>
+      <Menu />
       <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />
     </>
   );

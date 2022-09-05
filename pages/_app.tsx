@@ -5,6 +5,7 @@ import '../styles/home.css';
 import '../styles/header.css';
 import '../styles/mobileMenu.css';
 import '../styles/footer.css';
+import '../styles/menu.css';
 import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {

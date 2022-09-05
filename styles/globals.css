@@ -9,7 +9,7 @@ body {
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   background: #000 url(../public/images/background.jpg) top center fixed no-repeat;
-  background-size: cover;
+  background-size: 180%;
 }
 
 a {
@@ -20,4 +20,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-size: 120%;
+  }
 }
