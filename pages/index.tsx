@@ -61,8 +61,8 @@ const Home: NextPage = () => {
           <span className='main__text_strong'>Organisator:</span> Nafisa
         </p>
         <p className='main__text info__text'>
-          Ich freue mich von ganzem Herzen dieses außergewöhnliche Tanzwochenende wieder
-          präsentieren zu dürfen und Euch wiederzusehen!
+          Ich freue mich Von ganzem Herzen diese außergewöhnliche Tanzwochenende wieder präsentieren
+          zu dürfen und Euch wiederzusehen!
         </p>
         <h3 className='info__header'>Übernachtungsmöglichkeitenin der&nbsp;Nähe:</h3>
         <ul className='info__links'>
