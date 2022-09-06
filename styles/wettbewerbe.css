@@ -1,0 +1,38 @@
+.contest__subheader {
+  margin: 30px 0 0;
+  text-align: left;
+}
+
+.contest__category {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  color: #b3833b;
+  margin: 0;
+}
+
+.contest__items {
+  padding: 0 20px;
+}
+
+.contest__item {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .contest__category {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .contest__item {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
