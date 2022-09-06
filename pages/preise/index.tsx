@@ -52,23 +52,29 @@ const Price: NextPage = () => {
         </section>
 
         <section className='price__section price__section_gala-show'>
-          <h2 className='main__subheader'>3.Gala Shows Tickets</h2>
-          <h3 className='price__show-header'>1001Nacht OpenStage - Opening Gala</h3>
-          <p className='main__text price__text'>
-            am Freitag: <span className='main__text_strong'>15€</span>
-          </p>
-          <h3 className='price__show-header'>1001Nacht Galashow</h3>
-          <p className='main__text price__text'>
-            am Samstag: <span className='main__text_strong'>25€</span>
-          </p>
-          <p className='main__text price__text price__text_padded'>
-            Für Freitag und Samstag zusammen: <span className='main__text_strong'>30€</span>
-          </p>
+          <div className='price__text-container'>
+            <h2 className='main__subheader'>3.Gala Shows Tickets</h2>
+            <h3 className='price__show-header'>1001Nacht OpenStage - Opening Gala</h3>
+            <p className='main__text price__text'>
+              am Freitag: <span className='main__text_strong'>15€</span>
+            </p>
+            <h3 className='price__show-header'>1001Nacht Galashow</h3>
+            <p className='main__text price__text'>
+              am Samstag: <span className='main__text_strong'>25€</span>
+            </p>
+            <p className='main__text price__text price__text_padded'>
+              Für Freitag und Samstag zusammen: <span className='main__text_strong'>30€</span>
+            </p>
+          </div>
+
+          <Button title='Registrierung zu Show' className='price__button' />
+
           <p className='main__text price__text price__text_padded price__large-footnote'>
-            Bitte Musik an nafisa@mac.com senden. Mit Name, Musiktitel, Musiklänge, für welche
-            Show/Wettbewerb
+            Bitte Musik an <a href='mailto:nafisa@mac.com'>nafisa@mac.com</a> senden. Mit Name,
+            Musiktitel, Musiklänge, für welche Show/Wettbewerb
           </p>
         </section>
+
         <p className='price__footnote'>
           Aufgrund des Kleinunternehmerstatus gem.§19 UStG erhebe ich keine Mehrwertsteuer und weise
           diese daher nicht aus.
