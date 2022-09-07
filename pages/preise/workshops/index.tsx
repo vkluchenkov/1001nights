@@ -65,17 +65,18 @@ const WorkshopsRegistration: NextPage = () => {
   const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsError('');
+    const payload: WorkshopsPayload = {
+      type: 'workshops',
+      name,
+      email,
+      phone,
+      ws,
+    };
 
     try {
       const res = await fetch(`/api/forms`, {
         method: 'POST',
-        body: JSON.stringify({
-          type: 'workshops',
-          name,
-          email,
-          phone,
-          ws,
-        }),
+        body: JSON.stringify(payload),
       });
       if (res.status === 200) {
         console.log(await res.json());
