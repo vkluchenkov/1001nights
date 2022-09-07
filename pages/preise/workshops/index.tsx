@@ -3,6 +3,14 @@ import Head from 'next/head';
 import { FormEvent, useState } from 'react';
 import { Button } from '../../../components/Button/Button';
 
+interface WorkshopsPayload {
+  type: 'workshops';
+  name: string;
+  email: string;
+  phone: string;
+  ws: string;
+}
+
 const WorkshopsRegistration: NextPage = () => {
   const [name, setName] = useState('');
   const [isNameValid, setIsNameValid] = useState(true);
@@ -21,6 +29,8 @@ const WorkshopsRegistration: NextPage = () => {
   const [wsValidationMsg, setWsValidationMsg] = useState('');
 
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
+
+  const [isError, setIsError] = useState('');
 
   const handleInputChange = (e: FormEvent<HTMLInputElement>) => {
     const form: HTMLFormElement | null = document.querySelector('.form__container');
@@ -49,7 +59,36 @@ const WorkshopsRegistration: NextPage = () => {
       setIsWsValid(target.checkValidity());
       setWsValidationMsg(target.validationMessage);
     }
-    setIsBtnDisabled(!form!.reportValidity());
+    setIsBtnDisabled(!form!.checkValidity());
+  };
+
+  const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsError('');
+
+    try {
+      const res = await fetch(`/api/forms`, {
+        method: 'POST',
+        body: JSON.stringify({
+          type: 'workshops',
+          name,
+          email,
+          phone,
+          ws,
+        }),
+      });
+      if (res.status === 200) {
+        console.log(await res.json());
+        setName('');
+        setEmail('');
+        setPhone('');
+        setWs('');
+        setIsBtnDisabled(true);
+      }
+    } catch (error) {
+      setIsError('Something went wrong... Please try again later');
+      console.log(error);
+    }
   };
 
   return (
@@ -62,7 +101,7 @@ const WorkshopsRegistration: NextPage = () => {
       </Head>
       <div className='content__container'>
         <h1 className='main__header'>Anmeldung Workshops</h1>
-        <form className='form__container'>
+        <form className='form__container' noValidate onSubmit={submitHandler}>
           <div className='form__input-wrapper'>
             <label htmlFor='name' className='form__label'>
               Vorname/Name
@@ -108,8 +147,8 @@ const WorkshopsRegistration: NextPage = () => {
               required
               value={phone}
               onChange={handleInputChange}
-              minLength={9}
-              maxLength={15}
+              minLength={7}
+              maxLength={20}
               placeholder='+49 999 99 99'
             />
             <span className='form__error'>{phoneValidationMsg}</span>
@@ -133,6 +172,7 @@ const WorkshopsRegistration: NextPage = () => {
           <Button type='submit' className='button' isDisabled={isBtnDisabled}>
             Absenden
           </Button>
+          <span className='form__submit-error'>{isError}</span>
         </form>
       </div>
     </>

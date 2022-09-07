@@ -42,3 +42,12 @@
   line-height: 13px;
   color: #ff0000;
 }
+
+.form__submit-error {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ff0000;
+  text-align: center;
+}
