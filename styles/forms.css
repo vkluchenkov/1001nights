@@ -1,0 +1,44 @@
+.form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form__input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form__label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.form__input {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  border: none;
+  outline: 1px solid white;
+  padding: 7px 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: white;
+}
+
+.form__input_error {
+  outline: 1px solid #ff0000;
+}
+
+.form__error {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 13px;
+  color: #ff0000;
+}

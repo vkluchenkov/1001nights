@@ -1,8 +1,12 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Button } from '../../components/Button/Button';
 
 const Price: NextPage = () => {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -23,7 +27,13 @@ const Price: NextPage = () => {
             <span className='main__text_strong'>250€</span>
           </p>
           <p className='main__text price__text'>Kinder unter 12 Jahren 30% Ermäßigung</p>
-          <Button title='Registrierung zu Workshops' className='price__button' />
+          <Button
+            type='button'
+            className='price__button'
+            onClick={() => router.push('/preise/workshops')}
+          >
+            Registrierung zu Workshops
+          </Button>
         </section>
 
         <section className='price__section price__section_wettbewerbe'>
@@ -48,7 +58,9 @@ const Price: NextPage = () => {
               Fullpack für Wettbewerbe: <span className='main__text_strong'>80€</span>
             </p>
           </div>
-          <Button title='Registrierung zum Wettbewerb' className='price__button' />
+          <Button type='button' className='price__button'>
+            Registrierung zum Wettbewerb
+          </Button>
         </section>
 
         <section className='price__section price__section_gala-show'>
@@ -66,8 +78,6 @@ const Price: NextPage = () => {
               Für Freitag und Samstag zusammen: <span className='main__text_strong'>30€</span>
             </p>
           </div>
-
-          <Button title='Registrierung zu Show' className='price__button' />
 
           <p className='main__text price__text price__text_padded price__large-footnote'>
             Bitte Musik an <a href='mailto:nafisa@mac.com'>nafisa@mac.com</a> senden. Mit Name,

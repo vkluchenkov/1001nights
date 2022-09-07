@@ -11,6 +11,7 @@ import '../styles/price.css';
 import '../styles/workshops.css';
 import '../styles/datenschutz.css';
 import '../styles/wettbewerbe.css';
+import '../styles/forms.css';
 import type { AppProps } from 'next/app';
 import { Layout } from '../components/Layout/Layout';
 
