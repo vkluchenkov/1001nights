@@ -3,7 +3,7 @@ interface Menu {
   link: string;
 }
 
-export const adminEmail = 'badmonday@ya.ru';
+export const adminEmail = 'nafisa@mac.com';
 
 export const menu: Menu[] = [
   {
