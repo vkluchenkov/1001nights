@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import poster from '../public/images/poster.jpg';
+import poster from '../public/images/poster1.jpg';
 
 const Home: NextPage = () => {
   return (
