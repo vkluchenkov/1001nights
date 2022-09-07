@@ -10,8 +10,7 @@ interface WorkshopsPayload {
 }
 
 const SibApiV3Sdk = require('sib-api-v3-sdk');
-SibApiV3Sdk.ApiClient.instance.authentications['api-key'].apiKey =
-  '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';
+SibApiV3Sdk.ApiClient.instance.authentications['api-key'].apiKey = process.env.SENDINBLUE_SECRET;
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const body: WorkshopsPayload = JSON.parse(req.body);
