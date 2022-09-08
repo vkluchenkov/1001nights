@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { FormEvent, useState } from 'react';
 import { Button } from '../../../components/Button/Button';
 
@@ -12,6 +13,8 @@ interface WorkshopsPayload {
 }
 
 const WorkshopsRegistration: NextPage = () => {
+  const router = useRouter();
+
   const [name, setName] = useState('');
   const [isNameValid, setIsNameValid] = useState(true);
   const [nameValidationMsg, setNameValidationMsg] = useState('');
@@ -29,8 +32,10 @@ const WorkshopsRegistration: NextPage = () => {
   const [wsValidationMsg, setWsValidationMsg] = useState('');
 
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
+  const [isFormDisabled, setIsFormDisabled] = useState(false);
 
-  const [isError, setIsError] = useState('');
+  const [isError, setIsError] = useState(false);
+  const [message, setMessage] = useState('');
 
   const handleInputChange = (e: FormEvent<HTMLInputElement>) => {
     const form: HTMLFormElement | null = document.querySelector('.form__container');
@@ -64,7 +69,12 @@ const WorkshopsRegistration: NextPage = () => {
 
   const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsError('');
+
+    setIsFormDisabled(true);
+    setIsBtnDisabled(true);
+    setIsError(false);
+    setMessage('');
+
     const payload: WorkshopsPayload = {
       type: 'workshops',
       name,
@@ -79,16 +89,24 @@ const WorkshopsRegistration: NextPage = () => {
         body: JSON.stringify(payload),
       });
       if (res.status === 200) {
-        console.log(await res.json());
         setName('');
         setEmail('');
         setPhone('');
         setWs('');
         setIsBtnDisabled(true);
+        setMessage('Danke, Deine Registrierung ist gesendet');
+
+        await setTimeout(() => {
+          router.push('/danke');
+        }, 3000);
       }
     } catch (error) {
-      setIsError('Something went wrong... Please try again later');
+      setIsError(true);
+      setMessage('Hoppla, etwas ist schief gelaufen, bitte versuche es nochmals');
       console.log(error);
+    } finally {
+      setIsBtnDisabled(false);
+      setIsFormDisabled(false);
     }
   };
 
@@ -117,6 +135,7 @@ const WorkshopsRegistration: NextPage = () => {
               value={name}
               onChange={handleInputChange}
               placeholder='Deine Vorname/Name'
+              disabled={isFormDisabled}
             />
             <span className='form__error'>{nameValidationMsg}</span>
           </div>
@@ -133,6 +152,7 @@ const WorkshopsRegistration: NextPage = () => {
               value={email}
               onChange={handleInputChange}
               placeholder='email@zumbeispiel.com'
+              disabled={isFormDisabled}
             />
             <span className='form__error'>{emailValidationMsg}</span>
           </div>
@@ -151,6 +171,7 @@ const WorkshopsRegistration: NextPage = () => {
               minLength={7}
               maxLength={20}
               placeholder='+4999999999'
+              disabled={isFormDisabled}
             />
             <span className='form__error'>{phoneValidationMsg}</span>
           </div>
@@ -167,13 +188,16 @@ const WorkshopsRegistration: NextPage = () => {
               value={ws}
               onChange={handleInputChange}
               placeholder='Workshop Name/Fullpack'
+              disabled={isFormDisabled}
             />
             <span className='form__error'>{wsValidationMsg}</span>
           </div>
           <Button type='submit' className='button' isDisabled={isBtnDisabled}>
             Absenden
           </Button>
-          <span className='form__submit-error'>{isError}</span>
+          <span className={isError ? 'form__message form__message_error' : 'form__message'}>
+            {message}
+          </span>
         </form>
       </div>
     </>

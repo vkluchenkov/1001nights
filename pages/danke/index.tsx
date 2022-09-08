@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { Button } from '../../components/Button/Button';
 
 const Danke: NextPage = () => {
   return (
@@ -28,11 +29,21 @@ const Danke: NextPage = () => {
           <br />
           Deutsche Bank
           <br />
-          IBAN DE18 1207 0024 0356 0117 01
+          IBAN: DE18 1207 0024 0356 0117 01
           <br />
-          BIС DEUTDEDB160
+          BIС: DEUTDEDB160
         </p>
         <h2 className='main__subheader danke__subheader'>PayPal</h2>
+        <div className='danke__paypal-wrapper'>
+          <Button
+            type='button'
+            onClick={() => {
+              window.open('https://paypal.me/aliahbellydance', '_blank');
+            }}
+          >
+            Pay with PayPal
+          </Button>
+        </div>
       </div>
     </>
   );

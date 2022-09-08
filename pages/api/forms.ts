@@ -30,14 +30,14 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
                 email: adminEmail,
               },
             ],
-            subject: 'New form submission',
+            subject: 'Neue Workshop Buchung!',
             htmlContent: `<html>
             <body>
-            <h1>New workshops registration!</h1>
-            <p>Name: ${body.name}</p>
+            <h1>Neue Workshop Buchung!</h1>
+            <p>Vorname/Name: ${body.name}</p>
             <p>Email: ${body.email}</p>
-            <p>Phone: ${body.phone}</p>
-            <p>Workshops: ${body.ws}</p>
+            <p>Telefonnummer: ${body.phone}</p>
+            <p>Workshop Einzeln/FullPack: ${body.ws}</p>
             </body>
             </html>`,
           },
@@ -49,16 +49,16 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
                 email: body.email,
               },
             ],
-            subject: 'Thank you for registration!',
+            subject: 'Vielen Dank für Deine Bestellung!',
             htmlContent: `<html>
             <body>
-            <h1>Your registration is received!</h1>
-            <p>We will contact you as soon as we process it.</p>
-            <h2>Your registration details:</h2>
-            <p>Name: ${body.name}</p>
+            <h1>Vielen Dank für Deine Anmeldung</h1>
+            <p>Ich habe Deine Buchung bekommen und werde so schnell wie möglich antworten.
+            Unten findest Du noch einmal alle Details</p>
+            <p>Vorname/Name: ${body.name}</p>
             <p>Email: ${body.email}</p>
-            <p>Phone: ${body.phone}</p>
-            <p>Workshops: ${body.ws}</p>
+            <p>Telefonnummer: ${body.phone}</p>
+            <p>Workshop Einzeln/FullPack: ${body.ws}</p>
             </body>
             </html>`,
           },

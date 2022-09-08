@@ -1,3 +1,8 @@
 .danke__subheader {
   padding-top: 25px;
 }
+
+.danke__paypal-wrapper {
+  max-width: 350px;
+  margin: 0 auto;
+}

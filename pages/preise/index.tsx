@@ -58,7 +58,11 @@ const Price: NextPage = () => {
               Fullpack für Wettbewerbe: <span className='main__text_strong'>80€</span>
             </p>
           </div>
-          <Button type='button' className='price__button'>
+          <Button
+            type='button'
+            className='price__button'
+            onClick={() => router.push('/preise/wettbewerbe')}
+          >
             Registrierung zum Wettbewerb
           </Button>
         </section>
