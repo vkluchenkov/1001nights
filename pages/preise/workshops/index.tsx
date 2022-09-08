@@ -116,7 +116,7 @@ const WorkshopsRegistration: NextPage = () => {
               maxLength={40}
               value={name}
               onChange={handleInputChange}
-              placeholder='Input your name'
+              placeholder='Deine Vorname/Name'
             />
             <span className='form__error'>{nameValidationMsg}</span>
           </div>
@@ -132,7 +132,7 @@ const WorkshopsRegistration: NextPage = () => {
               required
               value={email}
               onChange={handleInputChange}
-              placeholder='email@example.com'
+              placeholder='email@zumbeispiel.com'
             />
             <span className='form__error'>{emailValidationMsg}</span>
           </div>
@@ -150,7 +150,7 @@ const WorkshopsRegistration: NextPage = () => {
               onChange={handleInputChange}
               minLength={7}
               maxLength={20}
-              placeholder='+49 999 99 99'
+              placeholder='+4999999999'
             />
             <span className='form__error'>{phoneValidationMsg}</span>
           </div>
@@ -166,7 +166,7 @@ const WorkshopsRegistration: NextPage = () => {
               required
               value={ws}
               onChange={handleInputChange}
-              placeholder='Workshops name / FullPack'
+              placeholder='Workshop Name/Fullpack'
             />
             <span className='form__error'>{wsValidationMsg}</span>
           </div>
