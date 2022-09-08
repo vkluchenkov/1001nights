@@ -6,7 +6,7 @@ interface WorkshopsPayload {
   name: string;
   email: string;
   phone: string;
-  ws: string;
+  workshops: string;
 }
 
 const SibApiV3Sdk = require('sib-api-v3-sdk');
@@ -37,7 +37,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             <p>Vorname/Name: ${body.name}</p>
             <p>Email: ${body.email}</p>
             <p>Telefonnummer: ${body.phone}</p>
-            <p>Workshop Einzeln/FullPack: ${body.ws}</p>
+            <p>Workshop Einzeln/FullPack: ${body.workshops}</p>
             </body>
             </html>`,
           },
@@ -58,7 +58,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             <p>Vorname/Name: ${body.name}</p>
             <p>Email: ${body.email}</p>
             <p>Telefonnummer: ${body.phone}</p>
-            <p>Workshop Einzeln/FullPack: ${body.ws}</p>
+            <p>Workshop Einzeln/FullPack: ${body.workshops}</p>
             </body>
             </html>`,
           },

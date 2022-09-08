@@ -38,7 +38,7 @@ const Danke: NextPage = () => {
           <Button
             type='button'
             onClick={() => {
-              window.open('https://paypal.me/aliahbellydance', '_blank');
+              window.open('https://paypal.me/nafisabellydance', '_blank');
             }}
           >
             Pay with PayPal

@@ -1,35 +1,35 @@
 import type { NextPage } from 'next';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { FormEvent, useState } from 'react';
 import { Button } from '../../../components/Button/Button';
+
+interface Fields {
+  name?: string;
+  email?: string;
+  phone?: string;
+  workshops?: string;
+}
 
 interface WorkshopsPayload {
   type: 'workshops';
   name: string;
   email: string;
   phone: string;
-  ws: string;
+  workshops: string;
 }
 
 const WorkshopsRegistration: NextPage = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Fields>({ mode: 'onChange' });
+
   const router = useRouter();
 
-  const [name, setName] = useState('');
-  const [isNameValid, setIsNameValid] = useState(true);
-  const [nameValidationMsg, setNameValidationMsg] = useState('');
-
-  const [email, setEmail] = useState('');
-  const [isEmailValid, setIsEmailValid] = useState(true);
-  const [emailValidationMsg, setEmailValidationMsg] = useState('');
-
-  const [phone, setPhone] = useState('');
-  const [isPhoneValid, setIsPhoneValid] = useState(true);
-  const [phoneValidationMsg, setPhoneValidationMsg] = useState('');
-
-  const [ws, setWs] = useState('');
-  const [isWsValid, setIsWsValid] = useState(true);
-  const [wsValidationMsg, setWsValidationMsg] = useState('');
+  const [fieldsErrMsg, setFieldErrMsg] = useState<Fields>({});
 
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
   const [isFormDisabled, setIsFormDisabled] = useState(false);
@@ -40,59 +40,29 @@ const WorkshopsRegistration: NextPage = () => {
   const handleInputChange = (e: FormEvent<HTMLInputElement>) => {
     const form: HTMLFormElement | null = document.querySelector('.form__container');
     const target = e.target as HTMLInputElement;
+    const name = target.name;
+    const errMessage = target.validationMessage;
 
-    if (target.name === 'name') {
-      setName(target.value);
-      setIsNameValid(target.checkValidity());
-      setNameValidationMsg(target.validationMessage);
-    }
+    setFieldErrMsg((prev) => {
+      return { ...prev, [name]: errMessage };
+    });
 
-    if (target.name === 'email') {
-      setEmail(target.value);
-      setIsEmailValid(target.checkValidity());
-      setEmailValidationMsg(target.validationMessage);
-    }
-
-    if (target.name === 'phone') {
-      setPhone(target.value);
-      setIsPhoneValid(target.checkValidity());
-      setPhoneValidationMsg(target.validationMessage);
-    }
-
-    if (target.name === 'workshops') {
-      setWs(target.value);
-      setIsWsValid(target.checkValidity());
-      setWsValidationMsg(target.validationMessage);
-    }
     setIsBtnDisabled(!form!.checkValidity());
   };
 
-  const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
+  const onSubmit: SubmitHandler<Fields> = async (data) => {
     setIsFormDisabled(true);
     setIsBtnDisabled(true);
     setIsError(false);
     setMessage('');
-
-    const payload: WorkshopsPayload = {
-      type: 'workshops',
-      name,
-      email,
-      phone,
-      ws,
-    };
+    console.log(data);
 
     try {
       const res = await fetch(`/api/forms`, {
         method: 'POST',
-        body: JSON.stringify(payload),
+        body: JSON.stringify(data as WorkshopsPayload),
       });
       if (res.status === 200) {
-        setName('');
-        setEmail('');
-        setPhone('');
-        setWs('');
         setIsBtnDisabled(true);
         setMessage('Danke, Deine Registrierung ist gesendet');
 
@@ -120,24 +90,28 @@ const WorkshopsRegistration: NextPage = () => {
       </Head>
       <div className='content__container'>
         <h1 className='main__header'>Anmeldung Workshops</h1>
-        <form className='form__container' noValidate onSubmit={submitHandler}>
+        <form className='form__container' noValidate onSubmit={handleSubmit(onSubmit)}>
           <div className='form__input-wrapper'>
             <label htmlFor='name' className='form__label'>
               Vorname/Name
             </label>
             <input
-              className={isNameValid ? 'form__input' : 'form__input form__input_error'}
-              type='text'
+              {...register('name', {
+                required: true,
+                minLength: 2,
+                maxLength: 20,
+                disabled: isFormDisabled,
+                onChange: handleInputChange,
+              })}
               name='name'
               required
               minLength={2}
-              maxLength={40}
-              value={name}
-              onChange={handleInputChange}
+              maxLength={20}
               placeholder='Deine Vorname/Name'
-              disabled={isFormDisabled}
+              className={errors.name ? 'form__input form__input_error' : 'form__input'}
             />
-            <span className='form__error'>{nameValidationMsg}</span>
+
+            <span className='form__error'>{fieldsErrMsg.name}</span>
           </div>
 
           <div className='form__input-wrapper'>
@@ -145,16 +119,18 @@ const WorkshopsRegistration: NextPage = () => {
               Email
             </label>
             <input
-              className={isEmailValid ? 'form__input' : 'form__input form__input_error'}
+              {...register('email', {
+                required: true,
+                onChange: handleInputChange,
+                disabled: isFormDisabled,
+              })}
+              className={fieldsErrMsg.email ? 'form__input form__input_error' : 'form__input'}
               type='email'
               name='email'
               required
-              value={email}
-              onChange={handleInputChange}
               placeholder='email@zumbeispiel.com'
-              disabled={isFormDisabled}
             />
-            <span className='form__error'>{emailValidationMsg}</span>
+            <span className='form__error'>{fieldsErrMsg.email}</span>
           </div>
 
           <div className='form__input-wrapper'>
@@ -162,18 +138,22 @@ const WorkshopsRegistration: NextPage = () => {
               Telefonnummer
             </label>
             <input
-              className={isPhoneValid ? 'form__input' : 'form__input form__input_error'}
+              {...register('phone', {
+                required: true,
+                minLength: 7,
+                maxLength: 20,
+                onChange: handleInputChange,
+                disabled: isFormDisabled,
+              })}
+              className={errors.phone ? 'form__input form__input_error' : 'form__input'}
               type='tel'
               name='phone'
               required
-              value={phone}
-              onChange={handleInputChange}
               minLength={7}
               maxLength={20}
               placeholder='+4999999999'
-              disabled={isFormDisabled}
             />
-            <span className='form__error'>{phoneValidationMsg}</span>
+            <span className='form__error'>{fieldsErrMsg.phone}</span>
           </div>
 
           <div className='form__input-wrapper'>
@@ -181,16 +161,17 @@ const WorkshopsRegistration: NextPage = () => {
               Workshop Einzeln/FullPack
             </label>
             <input
-              className={isWsValid ? 'form__input' : 'form__input form__input_error'}
-              type='text'
+              {...register('workshops', {
+                required: true,
+                onChange: handleInputChange,
+                disabled: isFormDisabled,
+              })}
+              className={errors.workshops ? 'form__input form__input_error' : 'form__input'}
               name='workshops'
               required
-              value={ws}
-              onChange={handleInputChange}
               placeholder='Workshop Name/Fullpack'
-              disabled={isFormDisabled}
             />
-            <span className='form__error'>{wsValidationMsg}</span>
+            <span className='form__error'>{fieldsErrMsg.workshops}</span>
           </div>
           <Button type='submit' className='button' isDisabled={isBtnDisabled}>
             Absenden

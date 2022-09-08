@@ -1,10 +1,12 @@
 import type { NextPage } from 'next';
+import { useForm, SubmitHandler } from 'react-hook-form';
+
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { FormEvent, useState } from 'react';
 import { Button } from '../../../components/Button/Button';
 
-interface ContestResults {
+interface Fields {
   gruppenname?: string;
   name?: string;
   kategorie?: string;
@@ -15,120 +17,38 @@ interface ContestResults {
   phone?: string;
 }
 
-interface FieldError {
-  isValid: boolean;
-  message: string;
-}
-
-interface FieldErrors {
-  gruppenname?: FieldError;
-  name?: FieldError;
-  kategorie?: FieldError;
-  tanzstil?: FieldError;
-  musiktitel?: FieldError;
-  choreograf?: FieldError;
-  email?: FieldError;
-  phone?: FieldError;
-}
-
 const ContestRegistration: NextPage = () => {
-  const router = useRouter();
+  const [fieldsErrMsg, setFieldErrMsg] = useState<Fields>({});
 
-  const [results, setResults] = useState<ContestResults>({});
-  const [errors, setErrors] = useState<FieldErrors>({
-    gruppenname: {
-      isValid: true,
-      message: '',
-    },
-    name: {
-      isValid: true,
-      message: '',
-    },
-    kategorie: {
-      isValid: true,
-      message: '',
-    },
-    tanzstil: {
-      isValid: true,
-      message: '',
-    },
-    musiktitel: {
-      isValid: true,
-      message: '',
-    },
-    choreograf: {
-      isValid: true,
-      message: '',
-    },
-    email: {
-      isValid: true,
-      message: '',
-    },
-    phone: {
-      isValid: true,
-      message: '',
-    },
-  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Fields>({ mode: 'all' });
 
-  const [isBtnDisabled, setIsBtnDisabled] = useState(true);
-  const [isFormDisabled, setIsFormDisabled] = useState(false);
-
-  const [message, setMessage] = useState('');
+  const onSubmit: SubmitHandler<Fields> = (data) => {
+    console.log(data);
+  };
 
   const handleInputChange = (e: FormEvent<HTMLInputElement>) => {
     const form: HTMLFormElement | null = document.querySelector('.form__container');
     const target = e.target as HTMLInputElement;
+    const name = target.name;
+    const errMessage = target.validationMessage;
 
-    setResults((prev) => {
-      const copy: ContestResults = JSON.parse(JSON.stringify(prev));
-      copy[target.name as keyof ContestResults] = target.value;
-      console.log(copy);
-      return copy;
-    });
-
-    setErrors((prev) => {
-      const copy: FieldErrors = JSON.parse(JSON.stringify(prev));
-      copy[target.name as keyof FieldErrors] = {
-        isValid: target.checkValidity(),
-        message: target.validationMessage,
-      };
-      console.log(copy);
-      return copy;
+    setFieldErrMsg((prev) => {
+      return { ...prev, [name]: errMessage };
     });
 
     setIsBtnDisabled(!form!.checkValidity());
   };
 
-  // const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
+  const router = useRouter();
 
-  //   setIsFormDisabled(true);
-  //   setIsBtnDisabled(true);
-  //   // setIsError(false);
-  //   // setMessage('');
+  const [isBtnDisabled, setIsBtnDisabled] = useState(false);
+  const [isFormDisabled, setIsFormDisabled] = useState(false);
 
-  //   try {
-  //     const res = await fetch(`/api/forms`, {
-  //       method: 'POST',
-  //       body: JSON.stringify(results),
-  //     });
-  //     if (res.status === 200) {
-  //       setIsBtnDisabled(true);
-  //       setMessage('Danke, Deine Registrierung ist gesendet');
-
-  //       await setTimeout(() => {
-  //         router.push('/danke');
-  //       }, 3000);
-  //     }
-  //   } catch (error) {
-  //     // setIsError(true);
-  //     setMessage('Hoppla, etwas ist schief gelaufen, bitte versuche es nochmals');
-  //     console.log(error);
-  //   } finally {
-  //     setIsBtnDisabled(false);
-  //     setIsFormDisabled(false);
-  //   }
-  // };
+  const [message, setMessage] = useState('');
 
   return (
     <>
@@ -141,24 +61,27 @@ const ContestRegistration: NextPage = () => {
       <div className='content__container'>
         <h1 className='main__header'>Anmeldung Wettbewerbe</h1>
 
-        <form className='form__container' noValidate /*onSubmit={submitHandler}*/>
+        <form className='form__container' noValidate onSubmit={handleSubmit(onSubmit)}>
           <div className='form__input-wrapper'>
             <label htmlFor='name' className='form__label'>
               Vorname/Name
             </label>
             <input
-              className={errors.name?.isValid ? 'form__input' : 'form__input form__input_error'}
-              type='text'
+              {...register('name', {
+                required: true,
+                minLength: 2,
+                maxLength: 20,
+                onChange: handleInputChange,
+              })}
               name='name'
               required
               minLength={2}
-              maxLength={40}
-              value={results.name || ''}
-              onChange={handleInputChange}
+              maxLength={20}
               placeholder='Deine Vorname/Name'
-              disabled={isFormDisabled}
+              className={errors.name ? 'form__input form__input_error' : 'form__input'}
             />
-            <span className='form__error'>{errors.name?.message || ''}</span>
+
+            <span className='form__error'>{fieldsErrMsg.name}</span>
           </div>
 
           <Button type='submit' className='button' isDisabled={isBtnDisabled}>
