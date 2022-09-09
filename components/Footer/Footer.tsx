@@ -10,6 +10,9 @@ export const Footer: React.FC = () => {
             <Link href='/datenschutz'>
               <a className='footer__link'>Datenschutz</a>
             </Link>
+            <Link href='/datenschutz' scroll>
+              Datenschutz2
+            </Link>
           </p>
         </div>
         <div className='footer__copyright'>
@@ -26,7 +29,7 @@ export const Footer: React.FC = () => {
             Created by{' '}
             <a
               className='footer__link'
-              href='https://bestpicture.pro'
+              href='https://github.com/vkluchenkov'
               target='_blank'
               rel='noreferrer'
             >

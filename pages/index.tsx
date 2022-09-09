@@ -44,7 +44,7 @@ const Home: NextPage = () => {
             Highlight 1001Nacht Open Stage-Opening Show am Freitag 14.10.22 und 1001Nacht Galashow
             am Samstag 15.10.22
           </li>
-          <li className='main__bullet'>Bazar mit Bauchtanz Kleidung und Training-Kostüme</li>
+          <li className='main__bullet'>Basar mit Bauchtanz Kleidung und Training-Kostüme</li>
           <li className='main__bullet'>
             Professionelle Fotos von André Elbing und Videos von Vladimir Kluchenkov
           </li>
@@ -78,7 +78,7 @@ const Home: NextPage = () => {
           <span className='main__text_strong'>Organisator:</span> Nafisa
         </p>
         <p className='main__text info__text'>
-          Ich freue mich Von ganzem Herzen diese außergewöhnliche Tanzwochenende wieder präsentieren
+          Ich freue mich von ganzem Herzen diese außergewöhnliche Tanzwochenende wieder präsentieren
           zu dürfen und Euch wiederzusehen!
         </p>
         <h3 className='info__header'>Übernachtungsmöglichkeitenin der&nbsp;Nähe:</h3>
