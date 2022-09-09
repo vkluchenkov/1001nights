@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Button } from '../../components/Button/Button';
 
@@ -82,6 +81,15 @@ const Price: NextPage = () => {
               Für Freitag und Samstag zusammen: <span className='main__text_strong'>30€</span>
             </p>
           </div>
+          <Button
+            type='button'
+            className='price__button'
+            onClick={() => {
+              window.open('https://paypal.me/nafisabellydance', '_blank');
+            }}
+          >
+            Pay with PayPal
+          </Button>
 
           <p className='main__text price__text price__text_padded price__large-footnote'>
             Bitte Musik an <a href='mailto:nafisa@mac.com'>nafisa@mac.com</a> senden. Mit Name,
