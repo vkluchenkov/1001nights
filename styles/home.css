@@ -206,6 +206,7 @@
 
   .main__poster-container {
     padding: 34px 0 0;
+    cursor: pointer;
   }
 }
 

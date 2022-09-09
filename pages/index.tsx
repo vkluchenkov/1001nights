@@ -1,9 +1,24 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
+import { useState } from 'react';
+import { ImagePopup } from '../components/ImagePopup/ImagePopup';
 import poster from '../public/images/poster1.jpg';
 
 const Home: NextPage = () => {
+  const [isPopupOpen, setisPopupOpen] = useState(false);
+  const [popupImage, setPopupImage] = useState<string | null | StaticImageData>(null);
+
+  const clickHandler = (image: string | StaticImageData) => {
+    setisPopupOpen(true);
+    setPopupImage(image);
+  };
+
+  const closePopupHandler = (e: KeyboardEvent | React.MouseEvent<HTMLElement>) => {
+    setisPopupOpen(false);
+    setPopupImage(null);
+  };
+
   return (
     <div className='content__container home__container'>
       <Head>
@@ -41,6 +56,7 @@ const Home: NextPage = () => {
           alt='1001 Nacht festival poster'
           layout='responsive'
           className='main__poster'
+          onClick={() => clickHandler(poster)}
         />
       </div>
       <section className='stars'>
@@ -108,6 +124,7 @@ const Home: NextPage = () => {
           </li>
         </ul>
       </section>
+      <ImagePopup image={popupImage} isOpen={isPopupOpen} onClose={closePopupHandler} />
     </div>
   );
 };

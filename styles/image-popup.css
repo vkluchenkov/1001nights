@@ -1,0 +1,25 @@
+.image-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  padding: 15px;
+}
+
+.image-popup_open {
+  display: flex;
+}
+
+.image-popup__image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .image-popup {
+    padding: 50px;
+  }
+}
