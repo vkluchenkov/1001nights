@@ -19,6 +19,7 @@
   display: block;
   border-radius: 10px;
   cursor: pointer;
+  background-color: rgb(56, 56, 56);
 }
 
 @media screen and (min-width: 768px) {
