@@ -40,7 +40,7 @@ const Fotogalerie: NextPage<FotoProps> = ({ fileList }) => {
           80vw'
           onClick={() => clickHandler(url)}
           placeholder='blur'
-          blurDataURL='url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsbOusBwAFUQIZBX2digAAAABJRU5ErkJggg==)'
+          blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsbOusBwAFUQIZBX2digAAAABJRU5ErkJggg=='
         />
       </li>
     );
