@@ -23,3 +23,5 @@ export const menu: Menu[] = [
     link: '/fotogalerie',
   },
 ];
+
+export const galleryFolder = '/public/images/gallery';

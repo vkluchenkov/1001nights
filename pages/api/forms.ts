@@ -80,7 +80,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const sendMail = () => {
     new SibApiV3Sdk.TransactionalEmailsApi()
       .sendTransacEmail({
-        sender: { email: 'vkluchenkov@gmail.com', name: '1001 Nacht festival' },
+        sender: { email: 'nafisa@mac.com', name: '1001 Nacht festival' },
         subject: 'Form submission confirmation',
         htmlContent: `<html></html>`,
         messageVersions: [
