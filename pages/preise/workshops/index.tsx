@@ -4,21 +4,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { FormEvent, useState } from 'react';
 import { Button } from '../../../components/Button/Button';
-
-interface Fields {
-  name?: string;
-  email?: string;
-  phone?: string;
-  workshops?: string;
-}
-
-interface WorkshopsPayload {
-  type: 'workshops';
-  name: string;
-  email: string;
-  phone: string;
-  workshops: string;
-}
+import { WorkshopsFields as Fields, WorkshopsPayload } from './types';
 
 const WorkshopsRegistration: NextPage = () => {
   const {
@@ -29,11 +15,9 @@ const WorkshopsRegistration: NextPage = () => {
 
   const router = useRouter();
 
-  const [fieldsErrMsg, setFieldErrMsg] = useState<Fields>({});
-
+  const [fieldsErrMsg, setFieldErrMsg] = useState<Partial<Fields>>({});
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
   const [isFormDisabled, setIsFormDisabled] = useState(false);
-
   const [isError, setIsError] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -42,11 +26,7 @@ const WorkshopsRegistration: NextPage = () => {
     const target = e.target as HTMLInputElement;
     const name = target.name;
     const errMessage = target.validationMessage;
-
-    setFieldErrMsg((prev) => {
-      return { ...prev, [name]: errMessage };
-    });
-
+    setFieldErrMsg((prev) => ({ ...prev, [name]: errMessage }));
     setIsBtnDisabled(!form!.checkValidity());
   };
 
@@ -55,17 +35,16 @@ const WorkshopsRegistration: NextPage = () => {
     setIsBtnDisabled(true);
     setIsError(false);
     setMessage('');
-    console.log(data);
+
+    const payload: WorkshopsPayload = { ...data, type: 'workshops' };
 
     try {
       const res = await fetch(`/api/forms`, {
         method: 'POST',
-        body: JSON.stringify(data as WorkshopsPayload),
+        body: JSON.stringify(payload),
       });
       if (res.status === 200) {
-        setIsBtnDisabled(true);
         setMessage('Danke, Deine Registrierung ist gesendet');
-
         await setTimeout(() => {
           router.push('/danke');
         }, 3000);
@@ -88,8 +67,10 @@ const WorkshopsRegistration: NextPage = () => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='description' content='1001 Nacht festival' />
       </Head>
+
       <div className='content__container'>
         <h1 className='main__header'>Anmeldung Workshops</h1>
+
         <form className='form__container' noValidate onSubmit={handleSubmit(onSubmit)}>
           <div className='form__input-wrapper'>
             <label htmlFor='name' className='form__label'>
@@ -98,19 +79,16 @@ const WorkshopsRegistration: NextPage = () => {
             <input
               {...register('name', {
                 required: true,
-                minLength: 2,
                 maxLength: 20,
                 disabled: isFormDisabled,
                 onChange: handleInputChange,
               })}
               name='name'
               required
-              minLength={2}
               maxLength={20}
               placeholder='Deine Vorname/Name'
               className={errors.name ? 'form__input form__input_error' : 'form__input'}
             />
-
             <span className='form__error'>{fieldsErrMsg.name}</span>
           </div>
 

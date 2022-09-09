@@ -16,7 +16,7 @@ const Danke: NextPage = () => {
         <p className='main__text'>
           Ich habe Deine Buchung bekommen und werde so schnell wie möglich antworten.
           <br />
-          Unten findest Du noch einmal alle Details
+          Hier unten findest Du die Zahlungsmöglichkeiten.
         </p>
 
         <h2 className='main__subheader danke__subheader'>Online-Zahlung</h2>
