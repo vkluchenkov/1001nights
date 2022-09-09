@@ -39,6 +39,8 @@ const Fotogalerie: NextPage<FotoProps> = ({ fileList }) => {
           (max-width: 768px) 450px,
           80vw'
           onClick={() => clickHandler(url)}
+          placeholder='blur'
+          blurDataURL='iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsbOusBwAFUQIZBX2digAAAABJRU5ErkJggg=='
         />
       </li>
     );

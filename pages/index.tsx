@@ -57,6 +57,7 @@ const Home: NextPage = () => {
           layout='responsive'
           className='main__poster'
           onClick={() => clickHandler(poster)}
+          placeholder='blur'
         />
       </div>
       <section className='stars'>
