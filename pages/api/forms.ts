@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { adminEmail } from '../../utils/constants';
-import { WorkshopsPayload } from '../preise/workshops/types';
-import { ContestPayload } from '../preise/wettbewerbe/types';
+import { WorkshopsPayload, ContestPayload } from '../../utils/types';
 const SibApiV3Sdk = require('sib-api-v3-sdk');
 SibApiV3Sdk.ApiClient.instance.authentications['api-key'].apiKey = process.env.SENDINBLUE_SECRET;
 
