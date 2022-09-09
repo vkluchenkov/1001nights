@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { FormEvent, useState } from 'react';
 import { Button } from '../../../components/Button/Button';
-import { WorkshopsFields as Fields, WorkshopsPayload } from './types';
+import { WorkshopsFields as Fields, WorkshopsPayload } from '../../../utils/types';
 
 const WorkshopsRegistration: NextPage = () => {
   const {

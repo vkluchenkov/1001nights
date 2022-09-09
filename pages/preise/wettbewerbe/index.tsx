@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { FormEvent, useState } from 'react';
 import { Button } from '../../../components/Button/Button';
-import { ContestFields as Fields, ContestPayload } from './types';
+import { ContestFields as Fields, ContestPayload } from '../../../utils/types';
 
 const ContestRegistration: NextPage = () => {
   const {
