@@ -1,18 +1,30 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import path from 'path';
-import { promises as fs } from 'fs';
+import { gql, ApolloClient, InMemoryCache } from '@apollo/client';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ImagePopup } from '../../components/ImagePopup/ImagePopup';
 
-interface FotoProps {
-  fileList: string[];
+interface Image {
+  caption: string | null;
+  altText: string;
+  large: string;
+  small: string;
 }
 
-const Fotogalerie: NextPage<FotoProps> = ({ fileList }) => {
+interface GalleryProps {
+  images: Image[];
+}
+
+const Fotogalerie: NextPage<GalleryProps> = ({ images }) => {
+  const [fileList, setFileList] = useState<Image[]>([]);
+
   const [isPopupOpen, setisPopupOpen] = useState(false);
   const [popupImage, setPopupImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (images) setFileList(images);
+  }, [images]);
 
   const clickHandler = (image: string) => {
     setisPopupOpen(true);
@@ -24,13 +36,12 @@ const Fotogalerie: NextPage<FotoProps> = ({ fileList }) => {
     setPopupImage(null);
   };
 
-  const imageList = fileList.map((file, index) => {
-    const url = '/images/gallery/' + file;
+  const imageList = fileList.map((image: Image, index: number) => {
     return (
       <li key={'photo' + index} className='photo__wrapper'>
         <Image
-          src={url}
-          alt=''
+          src={image.small}
+          alt={image.altText}
           className='photo'
           layout='fill'
           objectFit='cover'
@@ -38,7 +49,7 @@ const Fotogalerie: NextPage<FotoProps> = ({ fileList }) => {
           sizes='
           (max-width: 768px) 450px,
           80vw'
-          onClick={() => clickHandler(url)}
+          onClick={() => clickHandler(image.large)}
           placeholder='blur'
           blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsbOusBwAFUQIZBX2digAAAABJRU5ErkJggg=='
         />
@@ -64,14 +75,39 @@ const Fotogalerie: NextPage<FotoProps> = ({ fileList }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const galleryFolder = path.resolve(__dirname, '../../../public/images/gallery');
-  const fileList = await fs.readdir(galleryFolder);
+  const { BACKEND } = process.env;
 
-  return {
-    props: {
-      fileList,
-    },
-  };
+  const client = new ApolloClient({
+    uri: BACKEND,
+    cache: new InMemoryCache(),
+  });
+
+  const GALLERY = gql`
+    query {
+      gallery(id: 7, idType: DATABASE_ID) {
+        galleryImages {
+          ...GalleryFields
+        }
+      }
+    }
+
+    fragment GalleryFields on Gallery_Galleryimages {
+      images {
+        caption
+        altText
+        large: sourceUrl
+        small: sourceUrl(size: MEDIUM)
+      }
+    }
+  `;
+
+  const { data } = await client.query({
+    query: GALLERY,
+  });
+
+  const images = data.gallery.galleryImages.images;
+
+  return { props: { images }, revalidate: 30 };
 };
 
 export default Fotogalerie;
