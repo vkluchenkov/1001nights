@@ -16,6 +16,7 @@
 .image-popup__image-wrapper {
   position: relative;
   width: 100%;
+  background: url('/images/Loader.svg') center no-repeat;
 }
 
 @media screen and (min-width: 768px) {
