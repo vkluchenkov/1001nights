@@ -12,8 +12,12 @@ export const ImagePopup: React.FC<ImagePopupProps> = ({ image, isOpen, onClose }
     const handleEscClose = (e: KeyboardEvent) => e.key === 'Escape' && onClose(e);
     if (image) {
       document.addEventListener('keydown', handleEscClose);
+      document.body.classList.add('no-scroll');
     }
-    return () => document.removeEventListener('keydown', handleEscClose);
+    return () => {
+      document.body.classList.remove('no-scroll');
+      document.removeEventListener('keydown', handleEscClose);
+    };
   }, [image, onClose]);
 
   return (

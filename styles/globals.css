@@ -17,6 +17,10 @@ body {
   height: 100vh;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: underline;

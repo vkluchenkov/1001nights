@@ -2,9 +2,19 @@ import { MobileMenuProps } from './MobileMenu.types';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { menu } from '../../utils/constants';
+import { useEffect } from 'react';
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   const router = useRouter();
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('no-scroll');
+    }
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, [isOpen]);
 
   const renderMenu = menu.map((item, index) => {
     return (
