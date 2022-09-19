@@ -38,11 +38,6 @@ export const PayPalForm: React.FC<PayPalProps> = ({ onClose }) => {
     onClose();
   };
 
-  const handleFocus = (e: FormEvent<HTMLInputElement>) => {
-    const target = e.target as HTMLInputElement;
-    target.select();
-  };
-
   return (
     <form className='PayPal' noValidate onSubmit={submitHandler}>
       <h2 className='main__subheader danke__subheader'>PayPal</h2>
@@ -55,7 +50,6 @@ export const PayPalForm: React.FC<PayPalProps> = ({ onClose }) => {
         onChange={handleInputChange}
         value={sum}
         min={0}
-        onFocus={handleFocus}
       />
       {sum > 0 ? <p className='main__text'>PayPal handling fee (5%): €{fee}</p> : <></>}
       <Button type='submit' isDisabled={isBtnDisabled}>
