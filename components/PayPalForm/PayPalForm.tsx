@@ -53,7 +53,7 @@ export const PayPalForm: React.FC<PayPalProps> = ({ onClose }) => {
       />
       {sum > 0 ? <p className='main__text'>PayPal handling fee (5%): €{fee}</p> : <></>}
       <Button type='submit' isDisabled={isBtnDisabled}>
-        {sum > 0 ? `Pay € + ${sum + fee} with PayPal` : 'Pay with PayPal'}
+        {sum > 0 ? `Pay €${sum + fee} with PayPal` : 'Pay with PayPal'}
       </Button>
     </form>
   );
