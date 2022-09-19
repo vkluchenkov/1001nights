@@ -134,12 +134,12 @@ const ContestRegistration: NextPage = () => {
             <input
               {...register('tanzstil', {
                 required: true,
-                maxLength: 20,
+                maxLength: 200,
                 onChange: handleInputChange,
               })}
               name='tanzstil'
               required
-              maxLength={20}
+              maxLength={200}
               placeholder='Klassik,Folklore,Fusion…'
               className={errors.tanzstil ? 'form__input form__input_error' : 'form__input'}
             />
