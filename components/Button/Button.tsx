@@ -4,6 +4,7 @@ interface ButtonProps {
   isDisabled?: boolean;
   className?: string;
   onClick?: () => void;
+  isHidden?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -12,9 +13,16 @@ export const Button: React.FC<ButtonProps> = ({
   isDisabled,
   className,
   onClick,
+  isHidden,
 }) => {
   return (
-    <button type={type} className={`button ${className}`} disabled={isDisabled} onClick={onClick}>
+    <button
+      type={type}
+      className={`button ${className}`}
+      disabled={isDisabled}
+      onClick={onClick}
+      hidden={isHidden}
+    >
       {children}
     </button>
   );

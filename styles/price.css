@@ -24,6 +24,24 @@
   margin: 25px 0 0;
 }
 
+.payment-form {
+  width: 100%;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.payment-form_open {
+  border-top: 1px solid white;
+  height: 100%;
+  margin: 25px auto 0;
+}
+
 @media screen and (min-width: 768px) {
   .price__container {
     display: grid;
