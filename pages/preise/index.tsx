@@ -55,9 +55,6 @@ const Price: NextPage = () => {
               Kinder und Juniors: <span className='main__text_strong'>20€</span>
             </p>
             <p className='main__text price__text'>
-              jede weitere Tanz: <span className='main__text_strong'>15€</span>
-            </p>
-            <p className='main__text price__text'>
               Gruppe ab 3 Personen: <span className='main__text_strong'>15€ p.p.</span>
             </p>
             <p className='main__text price__text'>
@@ -116,7 +113,7 @@ const Price: NextPage = () => {
             onClick={paymentBtnHandler}
             isHidden={isBtnHidden}
           >
-            Buy tickets now
+            Zur Kasse
           </Button>
 
           <p className='main__text price__text price__text_padded price__large-footnote'>

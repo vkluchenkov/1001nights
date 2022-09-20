@@ -22,14 +22,15 @@ export const PayPalForm: React.FC<PayPalProps> = ({ onClose }) => {
 
   const handleInputChange = (e: FormEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement;
-    setSum(parseFloat(target.value));
+    const pattern = /[0-9]/g;
+    if (target.value.match(pattern) || target.value == '') setSum(parseInt(target.value));
   };
 
   const PayPalLinkHandler = () => {
     window.open(`${payPalMeLink}${sum + fee}eur`, '_blank');
   };
 
-  const submitHandler = (e: FormEvent) => {
+  const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     PayPalLinkHandler();
     setSum(0);
@@ -42,7 +43,7 @@ export const PayPalForm: React.FC<PayPalProps> = ({ onClose }) => {
     <form className='PayPal' noValidate onSubmit={submitHandler}>
       <h2 className='main__subheader danke__subheader'>PayPal</h2>
       <label htmlFor='sum' className='PayPalLabel'>
-        Enter your amount
+        Gebe Deine Betrag ein
       </label>
       <input
         type='number'
@@ -51,9 +52,9 @@ export const PayPalForm: React.FC<PayPalProps> = ({ onClose }) => {
         value={sum}
         min={0}
       />
-      {sum > 0 ? <p className='main__text'>PayPal handling fee (5%): €{fee}</p> : <></>}
+      {sum > 0 ? <p className='main__text'>PayPal Gebühren (5%): €{fee}</p> : <></>}
       <Button type='submit' isDisabled={isBtnDisabled}>
-        {sum > 0 ? `Pay €${sum + fee} with PayPal` : 'Pay with PayPal'}
+        {sum > 0 ? `Bezahle €${sum + fee} mit Paypal` : 'Bezahle mit Paypal'}
       </Button>
     </form>
   );
