@@ -92,8 +92,8 @@ const Price: NextPage = () => {
           <div className={isPaymentOpen ? 'payment-form payment-form_open' : 'payment-form'}>
             <h2 className='main__subheader danke__subheader'>Online-Zahlung</h2>
             <p className='main__text'>
-              Bitte überweise den vollständigen Betrag mit Info für welche Wettbewerb/Fullpack, an
-              das folgende Konto:
+              Bitte überweise den vollständigen Betrag mit Info für welche Wettbewerb / Fullpack /
+              Show Freitag / Show Samstag, an das folgende Konto:
             </p>
             <p className='main__text'>
               Nafisa Teichmann
