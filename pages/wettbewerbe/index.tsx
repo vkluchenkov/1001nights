@@ -19,12 +19,12 @@ const Wettbewerbe: NextPage = () => {
         </p>
 
         <h2 className='main__subheader contest__subheader'>1. Kategorien</h2>
-        <h3 className='contest__category'>Baby</h3>
+        <h3 className='contest__category'>Baby (4-8)</h3>
         <ul className='contest__items'>
           <li className='contest__item'>Solo (alle Stile)</li>
         </ul>
 
-        <h3 className='contest__category'>Kinder(9-11)</h3>
+        <h3 className='contest__category'>Kinder (9-11)</h3>
         <ul className='contest__items'>
           <li className='contest__item'>Solo (alle Stile)</li>
           <li className='contest__item'>Duo (alle Stile)</li>
