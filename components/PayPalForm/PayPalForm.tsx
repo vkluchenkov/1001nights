@@ -45,13 +45,16 @@ export const PayPalForm: React.FC<PayPalProps> = ({ onClose }) => {
       <label htmlFor='sum' className='PayPalLabel'>
         Gebe Deine Betrag ein
       </label>
-      <input
-        type='number'
-        className='PayPalInput'
-        onChange={handleInputChange}
-        value={sum}
-        min={0}
-      />
+      <div className='PayPal__input-wrapper'>
+        <span className='PayPal__euro-sign'>€</span>
+        <input
+          type='number'
+          className='PayPalInput'
+          onChange={handleInputChange}
+          value={isNaN(sum) ? '' : sum}
+          min={0}
+        />
+      </div>
       {sum > 0 ? <p className='main__text'>PayPal Gebühren (5%): €{fee}</p> : <></>}
       <Button type='submit' isDisabled={isBtnDisabled}>
         {sum > 0 ? `Bezahle €${sum + fee} mit Paypal` : 'Bezahle mit Paypal'}
