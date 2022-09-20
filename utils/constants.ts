@@ -25,3 +25,5 @@ export const menu: Menu[] = [
 ];
 
 export const galleryFolder = '/public/images/gallery';
+
+export const payPalMeLink = 'https://paypal.me/nafisabellydance/';

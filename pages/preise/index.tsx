@@ -1,10 +1,20 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { Button } from '../../components/Button/Button';
+import { PayPalForm } from '../../components/PayPalForm/PayPalForm';
 
 const Price: NextPage = () => {
   const router = useRouter();
+
+  const [isPaymentOpen, setIsPaymentOpen] = useState(false);
+  const [isBtnHidden, setIsBtnHidden] = useState(false);
+
+  const paymentBtnHandler = () => {
+    setIsPaymentOpen(!isPaymentOpen);
+    setIsBtnHidden(!isBtnHidden);
+  };
 
   return (
     <>
@@ -45,9 +55,6 @@ const Price: NextPage = () => {
               Kinder und Juniors: <span className='main__text_strong'>20€</span>
             </p>
             <p className='main__text price__text'>
-              jede weitere Tanz: <span className='main__text_strong'>15€</span>
-            </p>
-            <p className='main__text price__text'>
               Gruppe ab 3 Personen: <span className='main__text_strong'>15€ p.p.</span>
             </p>
             <p className='main__text price__text'>
@@ -81,14 +88,32 @@ const Price: NextPage = () => {
               Für Freitag und Samstag zusammen: <span className='main__text_strong'>30€</span>
             </p>
           </div>
+
+          <div className={isPaymentOpen ? 'payment-form payment-form_open' : 'payment-form'}>
+            <h2 className='main__subheader danke__subheader'>Online-Zahlung</h2>
+            <p className='main__text'>
+              Bitte überweise den vollständigen Betrag mit Info für welche Wettbewerb / Fullpack /
+              Show Freitag / Show Samstag, an das folgende Konto:
+            </p>
+            <p className='main__text'>
+              Nafisa Teichmann
+              <br />
+              Deutsche Bank
+              <br />
+              IBAN: DE18 1207 0024 0356 0117 01
+              <br />
+              BIС: DEUTDEDB160
+            </p>
+            <PayPalForm onClose={paymentBtnHandler} />
+          </div>
+
           <Button
             type='button'
             className='price__button'
-            onClick={() => {
-              window.open('https://paypal.me/nafisabellydance', '_blank');
-            }}
+            onClick={paymentBtnHandler}
+            isHidden={isBtnHidden}
           >
-            Pay with PayPal
+            Zur Kasse
           </Button>
 
           <p className='main__text price__text price__text_padded price__large-footnote'>
@@ -100,6 +125,12 @@ const Price: NextPage = () => {
         <p className='price__footnote'>
           Aufgrund des Kleinunternehmerstatus gem.§19 UStG erhebe ich keine Mehrwertsteuer und weise
           diese daher nicht aus.
+          <br /> Alle Zahlungen für die Teilnahme am Festival sind in jedem Fall nicht
+          erstattungsfähig, außer Absage des Festivals. Wenn Sie unser Festival nicht besuchen
+          können, dürfen Sie Ihr Paket mit einer obligatorischen Benachrichtigung der Veranstalter
+          übertragen. In diesem Fall könnten Wettbewerbskategorien in andere innerhalb der Zahlung
+          geändert werden. Neue Kategorien zu dieser Registrierung hinzuzufügen, ist nur möglich,
+          wenn freie Plätze übrig sind.
         </p>
       </div>
     </>

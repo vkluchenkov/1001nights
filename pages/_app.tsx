@@ -15,6 +15,7 @@ import '../styles/forms.css';
 import '../styles/danke.css';
 import '../styles/photo.css';
 import '../styles/image-popup.css';
+import '../styles/payPal.css';
 import type { AppProps } from 'next/app';
 import { Layout } from '../components/Layout/Layout';
 import Head from 'next/head';

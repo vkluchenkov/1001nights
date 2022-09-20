@@ -19,7 +19,12 @@ const Wettbewerbe: NextPage = () => {
         </p>
 
         <h2 className='main__subheader contest__subheader'>1. Kategorien</h2>
-        <h3 className='contest__category'>Kinder(9-11)</h3>
+        <h3 className='contest__category'>Baby (4-8)</h3>
+        <ul className='contest__items'>
+          <li className='contest__item'>Solo (alle Stile)</li>
+        </ul>
+
+        <h3 className='contest__category'>Kinder (9-11)</h3>
         <ul className='contest__items'>
           <li className='contest__item'>Solo (alle Stile)</li>
           <li className='contest__item'>Duo (alle Stile)</li>
@@ -28,7 +33,11 @@ const Wettbewerbe: NextPage = () => {
 
         <h3 className='contest__category'>Junior (12-17)</h3>
         <ul className='contest__items'>
-          <li className='contest__item'>Solo (alle Stile)</li>
+          <li className='contest__item'>Solo klassisch</li>
+          <li className='contest__item'>Solo Folklore</li>
+          <li className='contest__item'>Solo Tabla CD</li>
+          <li className='contest__item'>Solo Fusion</li>
+          <li className='contest__item'>Solo Modern</li>
           <li className='contest__item'>Duo (alle Stile)</li>
           <li className='contest__item'>Gruppe (alle Stile)</li>
         </ul>
@@ -55,7 +64,11 @@ const Wettbewerbe: NextPage = () => {
 
         <h3 className='contest__category'>Ladys (40+)</h3>
         <ul className='contest__items'>
-          <li className='contest__item'>Solo (alle Stile)</li>
+          <li className='contest__item'>Solo klassisch</li>
+          <li className='contest__item'>Solo Folklore</li>
+          <li className='contest__item'>Solo Tabla CD</li>
+          <li className='contest__item'>Solo Fusion</li>
+          <li className='contest__item'>Solo Modern</li>
         </ul>
 
         <h2 className='main__subheader contest__subheader'>2. Musik Länge</h2>

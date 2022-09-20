@@ -1,0 +1,46 @@
+.PayPal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.PayPalLabel {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.PayPalInput {
+  position: relative;
+  width: 100%;
+  max-width: 90px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  border: none;
+  outline: 1px solid white;
+  padding: 10px 15px 10px 35px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: white;
+}
+
+.PayPal__input-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.PayPal__euro-sign {
+  display: block;
+  color: rgb(145, 145, 145);
+  z-index: 1;
+  margin: 0 -20px 0 0;
+}

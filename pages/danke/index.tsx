@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Button } from '../../components/Button/Button';
+import { PayPalForm } from '../../components/PayPalForm/PayPalForm';
 
 const Danke: NextPage = () => {
   return (
@@ -21,8 +22,8 @@ const Danke: NextPage = () => {
 
         <h2 className='main__subheader danke__subheader'>Online-Zahlung</h2>
         <p className='main__text'>
-          Bitte überweise den vollständigen Betrag mit Info für welche Wettbewerb/Fullpack, an das
-          folgende Konto:
+          Bitte überweise den vollständigen Betrag mit Info für welche Wettbewerb / Fullpack / Show
+          Freitag / Show Samstag, an das folgende Konto:
         </p>
         <p className='main__text'>
           Nafisa Teichmann
@@ -33,16 +34,8 @@ const Danke: NextPage = () => {
           <br />
           BIС: DEUTDEDB160
         </p>
-        <h2 className='main__subheader danke__subheader'>PayPal</h2>
         <div className='danke__paypal-wrapper'>
-          <Button
-            type='button'
-            onClick={() => {
-              window.open('https://paypal.me/nafisabellydance', '_blank');
-            }}
-          >
-            Pay with PayPal
-          </Button>
+          <PayPalForm onClose={() => {}} />
         </div>
       </div>
     </>
