@@ -125,6 +125,12 @@ const Price: NextPage = () => {
         <p className='price__footnote'>
           Aufgrund des Kleinunternehmerstatus gem.§19 UStG erhebe ich keine Mehrwertsteuer und weise
           diese daher nicht aus.
+          <br /> Alle Zahlungen für die Teilnahme am Festival sind in jedem Fall nicht
+          erstattungsfähig, außer Absage des Festivals. Wenn Sie unser Festival nicht besuchen
+          können, dürfen Sie Ihr Paket mit einer obligatorischen Benachrichtigung der Veranstalter
+          übertragen. In diesem Fall könnten Wettbewerbskategorien in andere innerhalb der Zahlung
+          geändert werden. Neue Kategorien zu dieser Registrierung hinzuzufügen, ist nur möglich,
+          wenn freie Plätze übrig sind.
         </p>
       </div>
     </>
