@@ -5,6 +5,7 @@ const nextConfig = {
   images: {
     domains: ['content.1001nacht.art'],
   },
+  output: 'standalone',
 };
 
 module.exports = nextConfig;
