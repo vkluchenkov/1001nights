@@ -13,4 +13,4 @@ Small freelance project — my first experience with Next.JS — website for a d
 - Docker
 
 ## Live deployment
-https://www.1001nacht.de
+https://www.1001nacht.art
