@@ -11,3 +11,6 @@ Small freelance project — my forst experience with Next.JS — website for a d
 - REST API
 - Wordpress as a headless CMS
 - Docker
+
+## Live deployment
+https://www.1001nacht.de
