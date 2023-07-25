@@ -29,13 +29,16 @@ const Price: NextPage = () => {
         <section className='price__section price__section_worksops'>
           <h2 className='main__subheader'>1. Workshops</h2>
           <p className='main__text price__text'>
-            Workshop einzeln: <span className='main__text_strong'>50€</span>
+            Einzelne Workshops: <span className='main__text_strong'>40€</span>
           </p>
           <p className='main__text price__text'>
-            Fullpack bis 18.09.22: <span className='main__text_strong'>195€</span>, danach:{' '}
-            <span className='main__text_strong'>250€</span>
+            Workshops von Leandro Ferreyra: <span className='main__text_strong'>50€</span>
           </p>
-          <p className='main__text price__text'>Kinder unter 12 Jahren 30% Ermäßigung</p>
+          <p className='main__text price__text'>
+            Fullpack bis 01.09.2023: <span className='main__text_strong'>195€</span>, Ab 01.09.2023{' '}
+            <span className='main__text_strong'>240€</span>
+          </p>
+          {/* <p className='main__text price__text'>Kinder unter 12 Jahren 30% Ermäßigung</p> */}
           <Button
             type='button'
             className='price__button'
@@ -52,7 +55,7 @@ const Price: NextPage = () => {
               Kategorie Solo: <span className='main__text_strong'>30€</span>
             </p>
             <p className='main__text price__text'>
-              Kinder und Juniors: <span className='main__text_strong'>20€</span>
+              Kinder bis 12 Jahre: <span className='main__text_strong'>20€</span>
             </p>
             <p className='main__text price__text'>
               Gruppe ab 3 Personen: <span className='main__text_strong'>15€ p.p.</span>
@@ -61,8 +64,13 @@ const Price: NextPage = () => {
               Duo: <span className='main__text_strong'>20€ p.p.</span>
             </p>
             <p className='main__text price__text'>
-              Fullpack für Wettbewerbe: <span className='main__text_strong'>80€</span>
+              Fullpack für Wettbewerbe: <span className='main__text_strong'>100€</span>
             </p>
+            <p className='main__text price__text'>
+              Fullpack für Wettbewerbe Kinder unter 12 Jahren:{' '}
+              <span className='main__text_strong'>80€</span>
+            </p>
+            <p className='main__text price__text'>Ort: Virchowstr. 41, Neuruppin</p>
           </div>
           <Button
             type='button'

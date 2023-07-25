@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
     <>
       <header className='header'>
         <div className='header__logo'>
-          <Link href='/'>
+          <Link href='/' legacyBehavior>
             <a>
               <Image src={logo} alt='1001 Nacht logo' layout='fill' priority />
             </a>

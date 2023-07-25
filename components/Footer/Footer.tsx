@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
       <div className='footer__content'>
         <div className='footer__legal'>
           <p className='footer__text'>
-            <Link href='/datenschutz'>
+            <Link href='/datenschutz' legacyBehavior>
               <a className='footer__link'>Datenschutz</a>
             </Link>
           </p>

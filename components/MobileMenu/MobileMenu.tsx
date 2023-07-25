@@ -19,7 +19,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   const renderMenu = menu.map((item, index) => {
     return (
       <li key={index}>
-        <Link href={item.link}>
+        <Link href={item.link} legacyBehavior>
           <a
             className={
               router.pathname.startsWith(item.link)
@@ -39,7 +39,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     <nav className={isOpen ? 'mobile-menu mobile-menu_open' : 'mobile-menu'}>
       <ul className='mobile-menu__items'>
         <li>
-          <Link href='/'>
+          <Link href='/' legacyBehavior>
             <a
               className={
                 router.pathname == '/'
