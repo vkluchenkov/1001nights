@@ -43,7 +43,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       <p>Telefonnummer: ${payload.phone}</p>
       <p>Workshop Einzeln/FullPack: ${payload.workshops}</p>
       <hr>
-      <p><a href="www.1001nacht.art/danke" target="_blank">Hier unten findest Du Zahlungsmöglichkeiten<a/></p>
+      <p><a href="https://www.1001nacht.art/danke" target="_blank">Hier unten findest Du Zahlungsmöglichkeiten<a/></p>
       </body>
       </html>`;
     else return 'Incorrect data';
