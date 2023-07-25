@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Link from 'next/link';
 import logo from '../../public/images/logo.png';
 import { useEffect, useState } from 'react';

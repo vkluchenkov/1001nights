@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image, { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from "next/legacy/image";
 import { useState } from 'react';
 import { ImagePopup } from '../components/ImagePopup/ImagePopup';
 import poster from '../public/images/poster1.jpg';
