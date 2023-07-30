@@ -8,6 +8,7 @@ import '../styles/footer.css';
 import '../styles/menu.css';
 import '../styles/button.css';
 import '../styles/price.css';
+import '../styles/galashows.css';
 import '../styles/workshops.css';
 import '../styles/datenschutz.css';
 import '../styles/wettbewerbe.css';

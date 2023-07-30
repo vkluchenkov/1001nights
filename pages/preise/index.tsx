@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { Button } from '../../components/Button/Button';
 import { PayPalForm } from '../../components/PayPalForm/PayPalForm';
+import { Payment } from '../../components/Payment';
 
 const Price: NextPage = () => {
   const router = useRouter();
@@ -97,32 +98,7 @@ const Price: NextPage = () => {
             </p>
           </div>
 
-          <div className={isPaymentOpen ? 'payment-form payment-form_open' : 'payment-form'}>
-            <h2 className='main__subheader danke__subheader'>Online-Zahlung</h2>
-            <p className='main__text'>
-              Bitte überweise den vollständigen Betrag mit Info für welche Wettbewerb / Fullpack /
-              Show Freitag / Show Samstag, an das folgende Konto:
-            </p>
-            <p className='main__text'>
-              Nafisa Teichmann
-              <br />
-              Deutsche Bank
-              <br />
-              IBAN: DE18 1207 0024 0356 0117 01
-              <br />
-              BIС: DEUTDEDB160
-            </p>
-            <PayPalForm onClose={paymentBtnHandler} />
-          </div>
-
-          <Button
-            type='button'
-            className='price__button'
-            onClick={paymentBtnHandler}
-            isHidden={isBtnHidden}
-          >
-            Zur Kasse
-          </Button>
+          <Payment isOpen={isPaymentOpen} onClick={paymentBtnHandler} isBtnHidden={isBtnHidden} />
 
           <p className='main__text price__text price__text_padded price__large-footnote'>
             Bitte Musik an <a href='mailto:nafisa@mac.com'>nafisa@mac.com</a> senden. Mit Name,
