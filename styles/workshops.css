@@ -48,6 +48,7 @@
   font-size: 18px;
   line-height: 24px;
   margin: 0;
+  color: #b3833b;
 }
 
 .workshops__item-topic {
@@ -56,6 +57,7 @@
   font-size: 13px;
   line-height: 16px;
   margin: 0;
+  color: #b3833b;
 }
 
 .workshops__section_footnotes {
@@ -72,6 +74,10 @@
   text-align: center;
   color: #ffffff;
   margin: 0;
+}
+
+.workshops__white {
+  color: white;
 }
 
 @media screen and (min-width: 768px) {
