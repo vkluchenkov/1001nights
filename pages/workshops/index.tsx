@@ -1,6 +1,16 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Button } from '../../components/Button/Button';
+
+interface Schedule {
+  time: string;
+  name: string;
+  topic?: string;
+}
+
+interface Day {
+  title: string;
+  schedule: Schedule[];
+}
 
 const Workshops: NextPage = () => {
   return (
@@ -12,69 +22,77 @@ const Workshops: NextPage = () => {
         <meta name='description' content='1001 Nacht festival' />
       </Head>
       <div className='content__container workshops__container'>
-        <h1 className='main__header'>Termine und Workshops&nbsp;2022</h1>
+        <h1 className='main__header'>Termine und Workshops&nbsp;2023</h1>
         <section className='workshops__section'>
-          <h2 className='main__subheader'>Freitag</h2>
+          <h2 className='main__subheader workshops__white'>Freitag 06.10.2023</h2>
           <ul className='workshops__items'>
             <li className='workshops__item'>
-              <p className='workshops__item-time'>11:00-13:00</p>
-              <p className='workshops__item-name'>Alice Bloom</p>
-              <p className='workshops__item-topic'>Mystischer Tribal (Choreografie)</p>
+              <p className='workshops__item-time'>09:00-11:00</p>
+              <p className='workshops__item-name'>Rayana</p>
+              <p className='workshops__item-topic'>Saidi Choreografie</p>
+            </li>
+            <li className='workshops__item'>
+              <p className='workshops__item-time'>11:15-13:15</p>
+              <p className='workshops__item-name'>Yela</p>
+              <p className='workshops__item-topic'>Schleierfächer Choreografie</p>
             </li>
             <li className='workshops__item'>
               <p className='workshops__item-time'>13:30-15:30</p>
-              <p className='workshops__item-name'>Dalon</p>
-              <p className='workshops__item-topic'>Fächer Schleier (Choreografie)</p>
+              <p className='workshops__item-name'>Leandro Ferreyra</p>
+              <p className='workshops__item-topic'>Tango oriental Choreografie</p>
             </li>
             <li className='workshops__item'>
-              <p className='workshops__item-time'>16:00-18:00</p>
-              <p className='workshops__item-name'>Ofra Moustakis</p>
-              <p className='workshops__item-topic'>Yoga für Tänzerinnen</p>
-            </li>
-            <li className='workshops__item'>
-              <p className='workshops__item-time'>19:00</p>
-              <p className='workshops__item-name'>1001Nacht Open Stage — Opening&nbsp;Gala</p>
-              <p className='workshops__item-topic'>Gala mit Festival Teilnehmerinnen</p>
+              <p className='workshops__item-time'>19:30</p>
+              <p className='workshops__item-name'>1001Nacht Opening Gala Show</p>
+              <p className='workshops__item-place'>Ort: Am Alten Gymnasium 1, Neuruppin</p>
             </li>
           </ul>
         </section>
         <section className='workshops__section'>
-          <h2 className='main__subheader'>Samstag</h2>
+          <h2 className='main__subheader workshops__white'>Samstag 07.10.2023</h2>
           <ul className='workshops__items'>
             <li className='workshops__item'>
-              <p className='workshops__item-time'>10:00-12:00</p>
-              <p className='workshops__item-name'>Shalymar</p>
-              <p className='workshops__item-topic'>Klassisches Mejanse (Choreografie)</p>
-            </li>
-            <li className='workshops__item'>
-              <p className='workshops__item-time'>12:30-14:30</p>
-              <p className='workshops__item-name'>Rayana</p>
-              <p className='workshops__item-topic'>Shaabi nach ukrainischer Art (Choreografie)</p>
-            </li>
-            <li className='workshops__item'>
-              <p className='workshops__item-time'>15:00-17:00</p>
-              <p className='workshops__item-name'>Ranin</p>
-              <p className='workshops__item-topic'>
-                Trommel Solo mit Doppel Schleier (Choreografie)
-              </p>
-            </li>
-            <li className='workshops__item'>
-              <p className='workshops__item-time'>18:30</p>
-              <p className='workshops__item-name'>1001Nacht Galashow</p>
-              <p className='workshops__item-topic'>Gala Show mit Dozenten</p>
-            </li>
-          </ul>
-        </section>
-        <section className='workshops__section'>
-          <h2 className='main__subheader'>Sonntag</h2>
-          <ul className='workshops__items'>
-            <li className='workshops__item'>
-              <p className='workshops__item-time'>ab 10:00-17:00</p>
+              <p className='workshops__item-time'>Ab 09:00-18:00</p>
               <p className='workshops__item-name'>Wettbewerbe</p>
             </li>
+            <li className='workshops__item'>
+              <p className='workshops__item-time'>19:30</p>
+              <p className='workshops__item-name'>1001Nacht Stars Gala Show</p>
+              <p className='workshops__item-place'>Ort: Virchowstr. 41, Neuruppin</p>
+            </li>
           </ul>
         </section>
-        <section className='workshops__section_footnotes'>
+        <section className='workshops__section'>
+          <h2 className='main__subheader workshops__white'>Sonntag 08.10.2023</h2>
+          <ul className='workshops__items'>
+            <li className='workshops__item'>
+              <p className='workshops__item-time'>09:00-11:00</p>
+              <p className='workshops__item-name'>1. Rayana</p>
+              <p className='workshops__item-topic'>Tabla Solo Choreografie</p>
+              <p className='workshops__item-name'>2. Marina</p>
+              <p className='workshops__item-topic'>Baladi Choreografie</p>
+            </li>
+            <li className='workshops__item'>
+              <p className='workshops__item-time'>11:15-13:15</p>
+              <p className='workshops__item-name'>Shalymar</p>
+              <p className='workshops__item-topic'>Schleier Traum Choreografie</p>
+            </li>
+            <li className='workshops__item'>
+              <p className='workshops__item-time'>13:30-15:30</p>
+              <p className='workshops__item-name'>Leandro Ferreyra</p>
+              <p className='workshops__item-topic'>Mejance Choreografie</p>
+            </li>
+            <li className='workshops__item'>
+              <p className='workshops__item-time'>15:45-17:45</p>
+              <p className='workshops__item-name'>1. Amira</p>
+              <p className='workshops__item-topic'>Pop Choreografie</p>
+              <p className='workshops__item-name'>2. Aminahbanu </p>
+              <p className='workshops__item-topic'>Grundschritte + kl. TrommelSolo Choreografie</p>
+              <p className='workshops__item-place'>Ort: Am Alten Gymnasium 1, Neuruppin</p>
+            </li>
+          </ul>
+        </section>
+        {/* <section className='workshops__section_footnotes'>
           <p className='workshops__footnote'>
             Adresse für alle Workshops und Wettbewerbe und 1001Nacht Open Stage-Opening Gala:
             <br />
@@ -85,7 +103,7 @@ const Workshops: NextPage = () => {
             <br />
             Käthe-Kollwitz-Str. 2, Neuruppin
           </p>
-        </section>
+        </section> */}
       </div>
     </>
   );

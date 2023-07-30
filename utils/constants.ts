@@ -19,6 +19,10 @@ export const menu: Menu[] = [
     link: '/preise',
   },
   {
+    name: 'Gala shows',
+    link: '/gala-shows',
+  },
+  {
     name: 'Fotogalerie',
     link: '/fotogalerie',
   },

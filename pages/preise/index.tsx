@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { Button } from '../../components/Button/Button';
 import { PayPalForm } from '../../components/PayPalForm/PayPalForm';
+import { Payment } from '../../components/Payment';
 
 const Price: NextPage = () => {
   const router = useRouter();
@@ -29,13 +30,16 @@ const Price: NextPage = () => {
         <section className='price__section price__section_worksops'>
           <h2 className='main__subheader'>1. Workshops</h2>
           <p className='main__text price__text'>
-            Workshop einzeln: <span className='main__text_strong'>50€</span>
+            Einzelne Workshops: <span className='main__text_strong'>40€</span>
           </p>
           <p className='main__text price__text'>
-            Fullpack bis 18.09.22: <span className='main__text_strong'>195€</span>, danach:{' '}
-            <span className='main__text_strong'>250€</span>
+            Workshops von Leandro Ferreyra: <span className='main__text_strong'>50€</span>
           </p>
-          <p className='main__text price__text'>Kinder unter 12 Jahren 30% Ermäßigung</p>
+          <p className='main__text price__text'>
+            Fullpack bis 01.09.2023: <span className='main__text_strong'>195€</span>, Ab 01.09.2023{' '}
+            <span className='main__text_strong'>240€</span>
+          </p>
+          {/* <p className='main__text price__text'>Kinder unter 12 Jahren 30% Ermäßigung</p> */}
           <Button
             type='button'
             className='price__button'
@@ -52,7 +56,7 @@ const Price: NextPage = () => {
               Kategorie Solo: <span className='main__text_strong'>30€</span>
             </p>
             <p className='main__text price__text'>
-              Kinder und Juniors: <span className='main__text_strong'>20€</span>
+              Kinder bis 12 Jahre: <span className='main__text_strong'>20€</span>
             </p>
             <p className='main__text price__text'>
               Gruppe ab 3 Personen: <span className='main__text_strong'>15€ p.p.</span>
@@ -61,8 +65,13 @@ const Price: NextPage = () => {
               Duo: <span className='main__text_strong'>20€ p.p.</span>
             </p>
             <p className='main__text price__text'>
-              Fullpack für Wettbewerbe: <span className='main__text_strong'>80€</span>
+              Fullpack für Wettbewerbe: <span className='main__text_strong'>100€</span>
             </p>
+            <p className='main__text price__text'>
+              Fullpack für Wettbewerbe Kinder unter 12 Jahren:{' '}
+              <span className='main__text_strong'>80€</span>
+            </p>
+            <p className='main__text price__text'>Ort: Virchowstr. 41, Neuruppin</p>
           </div>
           <Button
             type='button'
@@ -74,7 +83,7 @@ const Price: NextPage = () => {
         </section>
 
         <section className='price__section price__section_gala-show'>
-          <div className='price__text-container'>
+          {/* <div className='price__text-container'>
             <h2 className='main__subheader'>3.Gala Shows Tickets</h2>
             <h3 className='price__show-header'>1001Nacht OpenStage - Opening Gala</h3>
             <p className='main__text price__text'>
@@ -87,34 +96,9 @@ const Price: NextPage = () => {
             <p className='main__text price__text price__text_padded'>
               Für Freitag und Samstag zusammen: <span className='main__text_strong'>30€</span>
             </p>
-          </div>
+          </div> */}
 
-          <div className={isPaymentOpen ? 'payment-form payment-form_open' : 'payment-form'}>
-            <h2 className='main__subheader danke__subheader'>Online-Zahlung</h2>
-            <p className='main__text'>
-              Bitte überweise den vollständigen Betrag mit Info für welche Wettbewerb / Fullpack /
-              Show Freitag / Show Samstag, an das folgende Konto:
-            </p>
-            <p className='main__text'>
-              Nafisa Teichmann
-              <br />
-              Deutsche Bank
-              <br />
-              IBAN: DE18 1207 0024 0356 0117 01
-              <br />
-              BIС: DEUTDEDB160
-            </p>
-            <PayPalForm onClose={paymentBtnHandler} />
-          </div>
-
-          <Button
-            type='button'
-            className='price__button'
-            onClick={paymentBtnHandler}
-            isHidden={isBtnHidden}
-          >
-            Zur Kasse
-          </Button>
+          <Payment isOpen={isPaymentOpen} onClick={paymentBtnHandler} isBtnHidden={isBtnHidden} />
 
           <p className='main__text price__text price__text_padded price__large-footnote'>
             Bitte Musik an <a href='mailto:nafisa@mac.com'>nafisa@mac.com</a> senden. Mit Name,

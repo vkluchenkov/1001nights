@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import { gql, ApolloClient, InMemoryCache } from '@apollo/client';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useEffect, useState } from 'react';
 import { ImagePopup } from '../../components/ImagePopup/ImagePopup';
 

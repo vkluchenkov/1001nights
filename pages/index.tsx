@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image, { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from "next/legacy/image";
 import { useState } from 'react';
 import { ImagePopup } from '../components/ImagePopup/ImagePopup';
 import poster from '../public/images/poster1.jpg';
@@ -30,21 +30,25 @@ const Home: NextPage = () => {
       <h1 className='main__header'>Willkommen</h1>
       <section className='intro'>
         <p className='main__text'>
-          Zu meinem fünften Orientalischen Tanz Festival 14.-16.10.2022 in Neuruppin.
+          Herzlich willkommen zu den 1001Nacht internationalen orientalischen Festival in Neuruppin
+          am 06.-08.10.2023
         </p>
         <p className='main__text'>Dich erwarten:</p>
         <ul className='main__bullets'>
           <li className='main__bullet'>
-            drei Tage /12 Stunden Workshops mit internationalen Dozenten
+            Zwei Tage / 20 Stunden Workshops mit internationalen Dozenten
           </li>
           <li className='main__bullet'>
-            außerdem finden Internationale Wettbewerbe Sonntag 16.10.22 mit tollen Gewinnen
+            Außerdem finden internationale Wettbewerbe am Samstag 07.10.2023 mit tollen Gewinnen
+            statt
           </li>
           <li className='main__bullet'>
-            Highlight 1001Nacht Open Stage-Opening Show am Freitag 14.10.22 und 1001Nacht Galashow
-            am Samstag 15.10.22
+            1001Nacht Opening Gala Show am 06.10.2023 und 1001Nacht Stars Gala Show am Samstag
+            07.10.2023
           </li>
-          <li className='main__bullet'>Basar mit Bauchtanz Kleidung und Training-Kostüme</li>
+          <li className='main__bullet'>
+            Basar mit internationalen Händlern für Tanz.-und Trainingskostüme und Zubehör
+          </li>
           <li className='main__bullet'>
             Professionelle Fotos von André Elbing und Videos von Vladimir Kluchenkov
           </li>
@@ -65,12 +69,14 @@ const Home: NextPage = () => {
           Unsere&nbsp;Dozenten in&nbsp;diesem&nbsp;Jahr:
         </h3>
         <ul className='stars__bullets'>
+          <li className='stars__bullet'>Leandro Ferreyra</li>
           <li className='stars__bullet'>Shalymar</li>
-          <li className='stars__bullet'>Ofra Moustakis</li>
-          <li className='stars__bullet'>Alice Bloom</li>
+          <li className='stars__bullet'>Aliah</li>
           <li className='stars__bullet'>Rayana</li>
-          <li className='stars__bullet'>Ranin</li>
-          <li className='stars__bullet'>Dalon</li>
+          <li className='stars__bullet'>Amira</li>
+          <li className='stars__bullet'>Aminahbanu</li>
+          <li className='stars__bullet'>Marina Nickel</li>
+          <li className='stars__bullet'>Yela</li>
         </ul>
       </section>
       <section className='info'>

@@ -8,7 +8,7 @@ export const Menu: React.FC = () => {
   const renderMenu = menu.map((item, index) => {
     return (
       <li key={index}>
-        <Link href={item.link}>
+        <Link href={item.link} legacyBehavior>
           <a
             className={
               router.pathname.startsWith(item.link) ? 'menu__item menu__item_active' : 'menu__item'
@@ -25,7 +25,7 @@ export const Menu: React.FC = () => {
     <nav className='menu'>
       <ul className='menu__items'>
         <li>
-          <Link href='/'>
+          <Link href='/' legacyBehavior>
             <a className={router.pathname == '/' ? 'menu__item menu__item_active' : 'menu__item'}>
               Start
             </a>
