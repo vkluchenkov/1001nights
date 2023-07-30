@@ -83,7 +83,7 @@ const Price: NextPage = () => {
         </section>
 
         <section className='price__section price__section_gala-show'>
-          <div className='price__text-container'>
+          {/* <div className='price__text-container'>
             <h2 className='main__subheader'>3.Gala Shows Tickets</h2>
             <h3 className='price__show-header'>1001Nacht OpenStage - Opening Gala</h3>
             <p className='main__text price__text'>
@@ -96,7 +96,7 @@ const Price: NextPage = () => {
             <p className='main__text price__text price__text_padded'>
               Für Freitag und Samstag zusammen: <span className='main__text_strong'>30€</span>
             </p>
-          </div>
+          </div> */}
 
           <Payment isOpen={isPaymentOpen} onClick={paymentBtnHandler} isBtnHidden={isBtnHidden} />
 
