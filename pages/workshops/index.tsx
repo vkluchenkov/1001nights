@@ -44,9 +44,7 @@ const Workshops: NextPage = () => {
             <li className='workshops__item'>
               <p className='workshops__item-time'>19:30</p>
               <p className='workshops__item-name'>1001Nacht Opening Gala Show</p>
-              <p className='workshops__item-topic workshops__white'>
-                Ort: Am Alten Gymnasium 1, Neuruppin
-              </p>
+              <p className='workshops__item-place'>Ort: Am Alten Gymnasium 1, Neuruppin</p>
             </li>
           </ul>
         </section>
@@ -60,9 +58,7 @@ const Workshops: NextPage = () => {
             <li className='workshops__item'>
               <p className='workshops__item-time'>19:30</p>
               <p className='workshops__item-name'>1001Nacht Stars Gala Show</p>
-              <p className='workshops__item-topic workshops__white'>
-                Ort: Virchowstr. 41, Neuruppin
-              </p>
+              <p className='workshops__item-place'>Ort: Virchowstr. 41, Neuruppin</p>
             </li>
           </ul>
         </section>
@@ -92,9 +88,7 @@ const Workshops: NextPage = () => {
               <p className='workshops__item-topic'>Pop Choreografie</p>
               <p className='workshops__item-name'>2. Aminahbanu </p>
               <p className='workshops__item-topic'>Grundschritte + kl. TrommelSolo Choreografie</p>
-              <p className='workshops__item-topic workshops__white'>
-                Ort: Am Alten Gymnasium 1, Neuruppin
-              </p>
+              <p className='workshops__item-place'>Ort: Am Alten Gymnasium 1, Neuruppin</p>
             </li>
           </ul>
         </section>
