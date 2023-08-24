@@ -15,7 +15,7 @@ const Wettbewerbe: NextPage = () => {
         <h1 className='main__header'>Wettbewerbe</h1>
         <h2 className='main__subheader'>Achtung!</h2>
         <p className='main__text'>
-          Die Teilnahme an Wettbewerben möglich nur mit Verbindung der Buchung mind. 4 Workshops
+          Die Teilnahme an Wettbewerben möglich nur mit Verbindung der Buchung mind. 2 Workshops
         </p>
 
         <h2 className='main__subheader contest__subheader'>1. Kategorien</h2>
