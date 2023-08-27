@@ -42,6 +42,11 @@ const Workshops: NextPage = () => {
               <p className='workshops__item-topic'>Tango oriental Choreografie</p>
             </li>
             <li className='workshops__item'>
+              <p className='workshops__item-time'>15:45-17:45</p>
+              <p className='workshops__item-name'>Aliah </p>
+              <p className='workshops__item-topic'>Lyric</p>
+            </li>
+            <li className='workshops__item'>
               <p className='workshops__item-time'>19:30</p>
               <p className='workshops__item-name'>1001Nacht Opening Gala Show</p>
               <p className='workshops__item-place'>Ort: Am Alten Gymnasium 1, Neuruppin</p>
