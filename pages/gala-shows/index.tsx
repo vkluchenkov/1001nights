@@ -50,12 +50,12 @@ const GalaShows: NextPage = () => {
           <p className='main__text price__text'>
             Eintritt: <span className='main__text_strong'>30€</span>
           </p>
-          <p className='main__text price__text'>Ort: Virchowstr. 41, Neuruppin</p>
+          {/* <p className='main__text price__text'>Ort: Virchowstr. 41, Neuruppin</p> */}
         </section>
 
         <section className='price__text-container gala__section_span'>
           <p className='main__text price__text'>
-            Fullback Shows: <span className='main__text_strong'>45€</span>
+            Fullpack Shows: <span className='main__text_strong'>45€</span>
           </p>
           <Payment isOpen={isPaymentOpen} onClick={paymentBtnHandler} isBtnHidden={isBtnHidden} />
         </section>
