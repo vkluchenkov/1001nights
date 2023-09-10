@@ -1,8 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Button } from '../../components/Button/Button';
 import { useState } from 'react';
-import { PayPalForm } from '../../components/PayPalForm/PayPalForm';
 import { Payment } from '../../components/Payment';
 
 const GalaShows: NextPage = () => {
@@ -50,7 +48,7 @@ const GalaShows: NextPage = () => {
           <p className='main__text price__text'>
             Eintritt: <span className='main__text_strong'>30€</span>
           </p>
-          {/* <p className='main__text price__text'>Ort: Virchowstr. 41, Neuruppin</p> */}
+          <p className='main__text price__text'>Ort: Am alten Gymnasium 1, Neuruppin</p>
         </section>
 
         <section className='price__text-container gala__section_span'>

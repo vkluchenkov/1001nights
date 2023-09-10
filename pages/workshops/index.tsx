@@ -63,7 +63,7 @@ const Workshops: NextPage = () => {
             <li className='workshops__item'>
               <p className='workshops__item-time'>19:30</p>
               <p className='workshops__item-name'>1001Nacht Stars Gala Show</p>
-              {/* <p className='workshops__item-place'>Ort: Virchowstr. 41, Neuruppin</p> */}
+              <p className='workshops__item-place'>Ort: Am alten Gymnasium 1, Neuruppin</p>
             </li>
           </ul>
         </section>

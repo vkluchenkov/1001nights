@@ -71,7 +71,7 @@ const Price: NextPage = () => {
               Fullpack für Wettbewerbe Kinder unter 12 Jahren:{' '}
               <span className='main__text_strong'>80€</span>
             </p>
-            {/* <p className='main__text price__text'>Ort: Virchowstr. 41, Neuruppin</p> */}
+            <p className='main__text price__text'>Ort: Am alten Gymnasium 1, Neuruppin</p>
           </div>
           <Button
             type='button'
