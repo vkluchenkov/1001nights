@@ -13,10 +13,10 @@ const Wettbewerbe: NextPage = () => {
       </Head>
       <div className='content__container'>
         <h1 className='main__header'>Wettbewerbe</h1>
-        <h2 className='main__subheader'>Achtung!</h2>
+        {/* <h2 className='main__subheader'>Achtung!</h2>
         <p className='main__text'>
           Die Teilnahme an Wettbewerben möglich nur mit Verbindung der Buchung mind. 2 Workshops
-        </p>
+        </p> */}
 
         <h2 className='main__subheader contest__subheader'>1. Kategorien</h2>
         <h3 className='contest__category'>Baby (4-8)</h3>
