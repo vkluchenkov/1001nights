@@ -3,7 +3,13 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['content.1001nacht.art'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'content.1001nacht.art',
+        port: '',
+      },
+    ],
   },
   output: 'standalone',
 };
