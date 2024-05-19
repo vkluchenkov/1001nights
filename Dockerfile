@@ -24,7 +24,6 @@ COPY . .
 ARG DOTENV_KEY
 ENV DOTENV_KEY=${DOTENV_KEY}
 RUN npm run build
-RUN npm run postbuild
 
 # Production image, copy all the files and run next
 FROM node:20-alpine AS runner
