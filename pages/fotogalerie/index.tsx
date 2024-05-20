@@ -76,6 +76,7 @@ const Fotogalerie: NextPage<GalleryProps> = ({ images }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const { BACKEND } = process.env;
+  console.log(BACKEND);
 
   const client = new ApolloClient({
     uri: BACKEND,
