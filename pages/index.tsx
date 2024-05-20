@@ -39,11 +39,11 @@ const Home: NextPage = () => {
             Zwei Tage / 12 Stunden Workshops mit internationalen Dozenten
           </li>
           <li className='main__bullet'>
-            Außerdem finden internationale Wettbewerbe am Samstag 11.10.2024 mit tollen Gewinnen
+            Außerdem finden internationale Wettbewerbe am Samstag 12.10.2024 mit tollen Gewinnen
             statt
           </li>
           <li className='main__bullet'>
-            1001 Nacht Stars Gala Show am Samstag 11.10.2024 und Closing Gala Show am Sonntag
+            1001 Nacht Stars Gala Show am Samstag 12.10.2024 und Closing Gala Show am Sonntag
             13.10.2024
           </li>
           <li className='main__bullet'>

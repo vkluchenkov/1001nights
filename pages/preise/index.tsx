@@ -59,10 +59,10 @@ const Price: NextPage = () => {
               Fullpack:<span className='main__text_strong'> 85€</span>
             </p>
             <p className='main__text price__text'>
-              Duo Kinder:<span className='main__text_strong'> 10€ p.p.</span>
+              Duo Kinder:<span className='main__text_strong'> 15€ p.p.</span>
             </p>
             <p className='main__text price__text'>
-              Gruppe:<span className='main__text_strong'> 15€ p.p.</span>
+              Gruppe:<span className='main__text_strong'> 10€ p.p.</span>
             </p>
             <h3 className='main__text price__text price__subheader'>
               Kategorie Solo Juniors bis 17 Jahre alt:
