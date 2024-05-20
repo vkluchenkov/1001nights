@@ -18,7 +18,7 @@ jobs:
           envkey_SENDINBLUE_SECRET: ${{ secrets.SENDINBLUE_SECRET }}
 
       - name: Build the Docker image
-        run: docker build -t ghcr.io/vkluchenkov/1001n:latest-dev .
+        run: docker build -t ghcr.io/${{ secrets.IMAGE_REPOSITORY }}/${{ secrets.IMAGE_NAME }}:latest-dev .
 
       - name: Login to ghcr
         uses: docker/login-action@v2
@@ -28,7 +28,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push the Docker image
-        run: docker push ghcr.io/vkluchenkov/1001n:latest-dev
+        run: docker push ghcr.io/${{ secrets.IMAGE_REPOSITORY }}/${{ secrets.IMAGE_NAME }}:latest-dev
 
       - name: Deploy
         uses: appleboy/ssh-action@v1.0.3
@@ -39,8 +39,8 @@ jobs:
           passphrase: ${{ secrets.SSHPASS }}
           script: |
             docker login --username=${{ github.actor }} --password=${{ secrets.GITHUB_TOKEN }} ghcr.io
-            docker pull ghcr.io/vkluchenkov/1001n:latest-dev
+            docker pull ghcr.io/${{ secrets.IMAGE_REPOSITORY }}/${{ secrets.IMAGE_NAME }}:latest-dev
             docker stop 1001n-dev
             docker rm 1001n-dev
-            docker run -d -p 49164:3000 --name=1001n-dev --restart=always --pull=always ghcr.io/vkluchenkov/1001n:latest-dev
+            docker run -d -p 49164:3000 --name=1001n-dev --restart=always --pull=always ghcr.io/${{ secrets.IMAGE_REPOSITORY }}/${{ secrets.IMAGE_NAME }}:latest-dev
             docker system prune -f
