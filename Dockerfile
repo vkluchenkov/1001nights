@@ -21,8 +21,6 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules 
 COPY . .
 
-ARG DOTENV_KEY
-ENV DOTENV_KEY=${DOTENV_KEY}
 RUN npm run build
 
 # Production image, copy all the files and run next
