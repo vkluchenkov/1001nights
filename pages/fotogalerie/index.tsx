@@ -102,12 +102,12 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   `;
 
-  const { data } = await client.query({
+  const res = await client.query({
     query: GALLERY,
   });
 
-  if (data) {
-    const images = data.gallery.galleryImages.images;
+  if (res.data) {
+    const images = res.data.gallery.galleryImages.images;
     return { props: { images }, revalidate: 30 };
   }
 
