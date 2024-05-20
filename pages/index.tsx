@@ -73,7 +73,7 @@ const Home: NextPage = () => {
           <li className='stars__bullet'>Nadine Etlah</li>
           <li className='stars__bullet'>Aliah</li>
           <li className='stars__bullet'>Svetare</li>
-          <li className='stars__bullet'>Sofia Varshavskaia</li>
+          <li className='stars__bullet'>Sofiia Varshavskaia</li>
         </ul>
       </section>
       <section className='info'>

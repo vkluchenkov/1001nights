@@ -90,8 +90,6 @@ const Price: NextPage = () => {
             <p className='main__text price__text'>
               Gruppe:<span className='main__text_strong'> 25€ p.p.</span>
             </p>
-
-            <p className='main__text price__text'>Ort: Am alten Gymnasium 1, Neuruppin</p>
           </div>
           <Button
             type='button'

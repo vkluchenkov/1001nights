@@ -24,7 +24,7 @@ const GalaShows: NextPage = () => {
       <div className='content__container gala__container'>
         <section className='price__text-container'>
           <h2 className='main__subheader'>1001Nacht Stars Gala Show</h2>
-          <h3 className='price__show-header'>Samstag 11.10.2024</h3>
+          <h3 className='price__show-header'>Samstag 12.10.2024</h3>
           <p className='main__text price__text'>
             Einlass: <span className='main__text_strong'>17:30</span>
           </p>
@@ -34,11 +34,10 @@ const GalaShows: NextPage = () => {
           <p className='main__text price__text'>
             Eintritt: <span className='main__text_strong'>35€</span>
           </p>
-          <p className='main__text price__text'>Ort: Am alten Gymnasium 1, Neuruppin</p>
         </section>
         <section className='price__text-container'>
           <h2 className='main__subheader'>1001Nacht Closing Gala</h2>
-          <h3 className='price__show-header'>Sonntag 12.10.2024</h3>
+          <h3 className='price__show-header'>Sonntag 13.10.2024</h3>
           <p className='main__text price__text'>
             Einlass: <span className='main__text_strong'>15:30</span>
           </p>
@@ -48,7 +47,6 @@ const GalaShows: NextPage = () => {
           <p className='main__text price__text'>
             Eintritt: <span className='main__text_strong'>25€</span>
           </p>
-          <p className='main__text price__text'>Ort: Am alten Gymnasium 1, Neuruppin</p>
         </section>
         <section className='price__text-container gala__section_span'>
           <p className='main__text price__text'>
