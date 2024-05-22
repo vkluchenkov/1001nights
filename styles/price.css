@@ -15,6 +15,19 @@
   margin: 25px 0 0;
 }
 
+.price__subheader {
+  /* font-style: normal; */
+  font-weight: 800;
+  /* font-size: 14px; */
+  /* line-height: 18px; */
+  /* color: #ffffff; */
+  margin: 20px 0 0;
+}
+
+.price__subheader:first-of-type {
+  margin: 10px 0 0;
+}
+
 .price__footnote {
   font-style: normal;
   font-weight: 300;

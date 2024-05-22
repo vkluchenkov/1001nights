@@ -9,21 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.17",
-    "graphql": "^16.7.1",
-    "next": "13.4.12",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-hook-form": "^7.45.2",
-    "sharp": "^0.32.4",
+    "@apollo/client": "^3.10.4",
+    "graphql": "^16.8.1",
+    "next": "14.2.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-hook-form": "^7.51.4",
+    "sharp": "^0.33.4",
     "sib-api-v3-sdk": "^8.5.0"
   },
   "devDependencies": {
-    "@types/node": "20.4.4",
-    "@types/react": "18.2.16",
-    "@types/react-dom": "18.2.7",
-    "eslint": "8.45.0",
-    "eslint-config-next": "13.4.12",
-    "typescript": "5.1.6"
+    "@types/node": "20.12.12",
+    "@types/react": "18.3.2",
+    "@types/react-dom": "18.3.0",
+    "eslint": "8.0.0",
+    "eslint-config-next": "14.2.3",
+    "typescript": "5.4.5"
   }
 }

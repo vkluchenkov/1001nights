@@ -14,7 +14,7 @@ export const Payment: React.FC<PaymentProps> = ({ isOpen, onClick, isBtnHidden }
         <h2 className='main__subheader danke__subheader'>Online-Zahlung</h2>
         <p className='main__text'>
           Bitte überweise den vollständigen Betrag mit Info für welche Wettbewerb / Fullpack / Show
-          Freitag / Show Samstag, an das folgende Konto:
+          Samstag / Show Sonntag an das folgende Konto:
         </p>
         <p className='main__text'>
           Nafisa Teichmann

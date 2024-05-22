@@ -26,6 +26,16 @@
   text-align: center;
 }
 
+.footer__address {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #fff;
+  margin: 0 0 18px;
+  text-align: center;
+}
+
 .footer__link {
   transition: opacity 0.3s;
 }

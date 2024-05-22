@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import { gql, ApolloClient, InMemoryCache } from '@apollo/client';
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import { useEffect, useState } from 'react';
 import { ImagePopup } from '../../components/ImagePopup/ImagePopup';
 
@@ -101,13 +101,16 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   `;
 
-  const { data } = await client.query({
+  const res = await client.query({
     query: GALLERY,
   });
 
-  const images = data.gallery.galleryImages.images;
+  if (res?.data) {
+    const images = res.data.gallery.galleryImages.images;
+    return { props: { images }, revalidate: 30 };
+  }
 
-  return { props: { images }, revalidate: 30 };
+  return { props: { images: [] }, revalidate: 30 };
 };
 
 export default Fotogalerie;

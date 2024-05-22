@@ -30,14 +30,14 @@ const Price: NextPage = () => {
         <section className='price__section price__section_worksops'>
           <h2 className='main__subheader'>1. Workshops</h2>
           <p className='main__text price__text'>
-            Einzelne Workshops: <span className='main__text_strong'>40€</span>
+            Einzelne Workshops: <span className='main__text_strong'>50€</span>
           </p>
           <p className='main__text price__text'>
-            Workshops von Leandro Ferreyra: <span className='main__text_strong'>50€</span>
+            Workshop von Leandro Ferreyra: <span className='main__text_strong'>65€</span>
           </p>
           <p className='main__text price__text'>
-            Fullpack bis 01.09.2023: <span className='main__text_strong'>195€</span>, Ab 01.09.2023{' '}
-            <span className='main__text_strong'>240€</span>
+            Fullpack bis 01.08.2024: <span className='main__text_strong'>220€</span>, Ab 01.08.24{' '}
+            <span className='main__text_strong'>260€</span>
           </p>
           {/* <p className='main__text price__text'>Kinder unter 12 Jahren 30% Ermäßigung</p> */}
           <Button
@@ -52,26 +52,44 @@ const Price: NextPage = () => {
         <section className='price__section price__section_wettbewerbe'>
           <h2 className='main__subheader'>2. Wettbewerbe</h2>
           <div className='price__text-container'>
+            <h3 className='main__text price__text price__subheader'>
+              Kinder Solo bis 12 Jahre alt:<span className='main__text_strong'> 25€</span>
+            </h3>
             <p className='main__text price__text'>
-              Kategorie Solo: <span className='main__text_strong'>30€</span>
+              Fullpack:<span className='main__text_strong'> 85€</span>
             </p>
             <p className='main__text price__text'>
-              Kinder bis 12 Jahre: <span className='main__text_strong'>20€</span>
+              Duo Kinder:<span className='main__text_strong'> 15€ p.p.</span>
             </p>
             <p className='main__text price__text'>
-              Gruppe ab 3 Personen: <span className='main__text_strong'>15€ p.p.</span>
+              Gruppe:<span className='main__text_strong'> 10€ p.p.</span>
+            </p>
+            <h3 className='main__text price__text price__subheader'>
+              Kategorie Solo Juniors bis 17 Jahre alt:
+              <span className='main__text_strong'> 35€</span>
+            </h3>
+            <p className='main__text price__text'>
+              Fullpack:<span className='main__text_strong'> 105€</span>
             </p>
             <p className='main__text price__text'>
-              Duo: <span className='main__text_strong'>20€ p.p.</span>
+              Duo:<span className='main__text_strong'> 25€ p.p.</span>
             </p>
             <p className='main__text price__text'>
-              Fullpack für Wettbewerbe: <span className='main__text_strong'>100€</span>
+              Gruppe:<span className='main__text_strong'> 20€ p.p.</span>
+            </p>
+            <h3 className='main__text price__text price__subheader'>
+              Kategorie Solo Erwachsene 18+:
+              <span className='main__text_strong'> 45€</span>
+            </h3>
+            <p className='main__text price__text'>
+              Fullpack:<span className='main__text_strong'> 145€</span>
             </p>
             <p className='main__text price__text'>
-              Fullpack für Wettbewerbe Kinder unter 12 Jahren:{' '}
-              <span className='main__text_strong'>80€</span>
+              Duo:<span className='main__text_strong'> 30€ p.p.</span>
             </p>
-            <p className='main__text price__text'>Ort: Am alten Gymnasium 1, Neuruppin</p>
+            <p className='main__text price__text'>
+              Gruppe:<span className='main__text_strong'> 25€ p.p.</span>
+            </p>
           </div>
           <Button
             type='button'

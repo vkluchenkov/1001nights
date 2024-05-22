@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image, { StaticImageData } from "next/legacy/image";
+import Image, { StaticImageData } from 'next/legacy/image';
 import { useState } from 'react';
 import { ImagePopup } from '../components/ImagePopup/ImagePopup';
-import poster from '../public/images/poster1.jpg';
+import poster from '../public/images/poster2024.jpg';
 
 const Home: NextPage = () => {
   const [isPopupOpen, setisPopupOpen] = useState(false);
@@ -30,21 +30,21 @@ const Home: NextPage = () => {
       <h1 className='main__header'>Willkommen</h1>
       <section className='intro'>
         <p className='main__text'>
-          Herzlich willkommen zu den 1001Nacht internationalen orientalischen Festival in Neuruppin
-          am 06.-08.10.2023
+          Herzlich willkommen zu den 1001Nacht internationalen orientalische Tanz Festival in
+          Neuruppin am 11.-13.10.2024
         </p>
         <p className='main__text'>Dich erwarten:</p>
         <ul className='main__bullets'>
           <li className='main__bullet'>
-            Zwei Tage / 20 Stunden Workshops mit internationalen Dozenten
+            Zwei Tage / 12 Stunden Workshops mit internationalen Dozenten
           </li>
           <li className='main__bullet'>
-            Außerdem finden internationale Wettbewerbe am Samstag 07.10.2023 mit tollen Gewinnen
+            Außerdem finden internationale Wettbewerbe am Samstag 12.10.2024 mit tollen Gewinnen
             statt
           </li>
           <li className='main__bullet'>
-            1001Nacht Opening Gala Show am 06.10.2023 und 1001Nacht Stars Gala Show am Samstag
-            07.10.2023
+            1001 Nacht Stars Gala Show am Samstag 12.10.2024 und Closing Gala Show am Sonntag
+            13.10.2024
           </li>
           <li className='main__bullet'>
             Basar mit internationalen Händlern für Tanz.-und Trainingskostüme und Zubehör
@@ -70,13 +70,10 @@ const Home: NextPage = () => {
         </h3>
         <ul className='stars__bullets'>
           <li className='stars__bullet'>Leandro Ferreyra</li>
-          <li className='stars__bullet'>Shalymar</li>
+          <li className='stars__bullet'>Nadine Etlah</li>
           <li className='stars__bullet'>Aliah</li>
-          <li className='stars__bullet'>Rayana</li>
-          <li className='stars__bullet'>Amira</li>
-          <li className='stars__bullet'>Aminahbanu</li>
-          <li className='stars__bullet'>Marina Nickel</li>
-          <li className='stars__bullet'>Yela</li>
+          <li className='stars__bullet'>Svetare</li>
+          <li className='stars__bullet'>Sofiia Varshavskaia</li>
         </ul>
       </section>
       <section className='info'>
