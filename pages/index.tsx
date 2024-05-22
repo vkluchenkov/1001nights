@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image, { StaticImageData } from 'next/legacy/image';
 import { useState } from 'react';
 import { ImagePopup } from '../components/ImagePopup/ImagePopup';
-import poster from '../public/images/poster1.jpg';
+import poster from '../public/images/poster2024.jpg';
 
 const Home: NextPage = () => {
   const [isPopupOpen, setisPopupOpen] = useState(false);
