@@ -52,7 +52,7 @@ const GalaShows: NextPage = () => {
           <p className='main__text price__text'>
             Fullpack Shows: <span className='main__text_strong'>55€</span>
           </p>
-          <Payment isOpen={isPaymentOpen} onClick={paymentBtnHandler} isBtnHidden={isBtnHidden} />
+          {/* <Payment isOpen={isPaymentOpen} onClick={paymentBtnHandler} isBtnHidden={isBtnHidden} /> */}
         </section>
       </div>
     </>

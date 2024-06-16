@@ -40,13 +40,13 @@ const Price: NextPage = () => {
             <span className='main__text_strong'>260€</span>
           </p>
           {/* <p className='main__text price__text'>Kinder unter 12 Jahren 30% Ermäßigung</p> */}
-          <Button
+          {/* <Button
             type='button'
             className='price__button'
             onClick={() => router.push('/preise/workshops')}
           >
             Registrierung zu Workshops
-          </Button>
+          </Button> */}
         </section>
 
         <section className='price__section price__section_wettbewerbe'>
@@ -91,32 +91,17 @@ const Price: NextPage = () => {
               Gruppe:<span className='main__text_strong'> 25€ p.p.</span>
             </p>
           </div>
-          <Button
+          {/* <Button
             type='button'
             className='price__button'
             onClick={() => router.push('/preise/wettbewerbe')}
           >
             Registrierung zum Wettbewerb
-          </Button>
+          </Button> */}
         </section>
 
         <section className='price__section price__section_gala-show'>
-          {/* <div className='price__text-container'>
-            <h2 className='main__subheader'>3.Gala Shows Tickets</h2>
-            <h3 className='price__show-header'>1001Nacht OpenStage - Opening Gala</h3>
-            <p className='main__text price__text'>
-              am Freitag: <span className='main__text_strong'>15€</span>
-            </p>
-            <h3 className='price__show-header'>1001Nacht Galashow</h3>
-            <p className='main__text price__text'>
-              am Samstag: <span className='main__text_strong'>25€</span>
-            </p>
-            <p className='main__text price__text price__text_padded'>
-              Für Freitag und Samstag zusammen: <span className='main__text_strong'>30€</span>
-            </p>
-          </div> */}
-
-          <Payment isOpen={isPaymentOpen} onClick={paymentBtnHandler} isBtnHidden={isBtnHidden} />
+          {/* <Payment isOpen={isPaymentOpen} onClick={paymentBtnHandler} isBtnHidden={isBtnHidden} /> */}
 
           <p className='main__text price__text price__text_padded price__large-footnote'>
             Bitte Musik an <a href='mailto:nafisa@mac.com'>nafisa@mac.com</a> senden. Mit Name,
